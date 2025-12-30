@@ -20,16 +20,6 @@
   --hf-background-color: var(--font-color);
 }
 
-// Styling of the dark mode
-@media (prefers-color-scheme: dark) {
-  :root {
-    --font-family: roboto,arial,serif;
-    --font-color: #eeeeee;
-    --background-color: #013140;
-    --hf-font-color: var(--background-color);
-    --hf-background-color: var(--font-color);
-  }
-}
 
 // Apply variables
 body {
@@ -129,8 +119,17 @@ h3 {
   display: none;
 }
 
-/* Switch to dark mode logo */
+// Styling of the dark mode
 @media (prefers-color-scheme: dark) {
+  :root {
+    --font-family: roboto,arial,serif;
+    --font-color: #eeeeee;
+    --background-color: #013140;
+    --hf-font-color: var(--background-color);
+    --hf-background-color: var(--font-color);
+  }
+
+  /* Switch to dark mode logo */
   .site-title .logo-light-mode {
     display: none;
   }
