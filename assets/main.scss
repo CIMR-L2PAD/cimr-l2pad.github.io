@@ -22,9 +22,17 @@ h3 {
 }
 
 body {
+   background-color: #eeeeee;
    color: #013140;
    font-family: roboto,arial,serif;
 }
+
+// Custom styles for dark mode
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #013140;
+    color: #eeeeee;
+  }
 
 p {
     text-align: justify;
