@@ -131,11 +131,11 @@ h3 {
 
 /* Switch to dark mode logo */
 @media (prefers-color-scheme: dark) {
-  .site-title logo-light-mode {
+  .site-title .logo-light-mode {
     display: none;
   }
 
-  .site-title logo-dark-mode {
+  .site-title .logo-dark-mode {
     display: block;
   }
 }
