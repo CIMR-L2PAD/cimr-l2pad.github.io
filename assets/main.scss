@@ -1,0 +1,182 @@
+---
+# Front matter so Jekyll processes this file
+---
+
+/* Load minima defaults */
+@import "minima";
+
+/* HEADER LAYOUT: logo + menu aligned left */
+.site-header .wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* everything to the left */
+  gap: 1rem;                   /* space between logo and menu */
+  padding-left: 0;             /* flush logo to page edge */
+}
+
+.site-title {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  margin: 0;
+}
+
+.site-title .logo {
+  height: 48px; /* adjust to make logo smaller/larger */
+  width: auto;
+  object-fit: contain;
+}
+
+/* Optional: hide the text title if you want only the logo */
+.site-title span {
+  font-size: 1.1rem;
+  white-space: nowrap;
+}
+
+:root { --header-h: 64px; } /* set to your real header height */
+
+/* --- Partner grid & cards --- */
+.partners-grid {
+  display: grid;
+  grid-template-columns: repeat( auto-fill, minmax(260px, 1fr) );
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.partner-card {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  align-items: start;
+  gap: .75rem;
+  padding: 1rem;
+  border: 1px solid rgba(0,0,0,.08);
+  border-radius: 12px;
+  background: #fff;
+}
+
+.partner-logo-wrapper {
+  height: 80px; /* adjust to match tallest desired logo */
+  display: flex;
+  align-items: center; /* center vertically */
+  justify-content: center; /* center horizontally */
+}
+
+.partner-logo {
+  max-width: 160px;
+  max-height: 100%; /* takes full wrapper height if needed */
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  filter: saturate(1.05);
+}
+
+.partner-logo-link { display: inline-block; }
+
+.partner-meta { margin-top: .25rem; }
+
+.partner-name {
+  font-size: 1.0rem;
+  margin: 0 0 .25rem 0;
+}
+
+.partner-name a { text-decoration: none; }
+
+.partner-people {
+  list-style: none;
+  padding: 0;
+  margin: .25rem 0 0 0;
+}
+
+.partner-people li {
+  margin: .15rem 0;
+  line-height: 1.35;
+}
+
+.partner-people a { text-decoration: none; }
+.partner-people .role { color: #555; font-size: .95em; }
+
+.partner-role {
+  font-size: 0.9rem;     /* smaller than the name */
+  color: #555;
+  margin: -0.15rem 0 0.35rem 0; /* tighten spacing under the name */
+}
+
+/* Header & page layout */
+.site-header {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 1000;
+  background: #f6f8fa;
+  border-top: 1px solid rgba(0,0,0,.06);
+  border-bottom: 1px solid rgba(0,0,0,.06);
+}
+
+.page-content { padding-top: calc(var(--header-h) + 1.0rem); }
+
+/* Optional: ensure in-page anchors aren't hidden under the header */
+.page-content h2, .page-content h3, .page-content h4 { scroll-margin-top: var(--header-h); }
+
+/* Footer: thin top border to match header bottom */
+.site-footer {
+  background: #f6f8fa;
+  border-top: 1px solid rgba(0,0,0,.06);
+}
+
+.footer-col-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;  /* change to center/flex-end if you prefer */
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.footer-col-left,
+.footer-col-right { flex: 1; }
+
+.footer-entry { margin: 0.25rem 0; }
+
+.footer-col-left a {
+  color: #0366d6;
+  text-decoration: none;
+}
+.footer-col-left a:hover { text-decoration: underline; }
+
+.funding-note {
+  color: inherit;
+  margin: 0.25rem 0;
+  text-align: right;
+}
+
+.license-note {
+  color: inherit;
+  text-align: right;
+  margin: 0.25rem 0;
+}
+.license-note a {
+  color: #0366d6;
+  text-decoration: none;
+}
+.license-note a:hover { text-decoration: underline; }
+
+/* NAVIGATION STYLING */
+.site-nav {
+  display: flex;
+  align-items: center;
+}
+
+/* Burger menu icon size (desktop + mobile) */
+.site-nav .menu-icon svg {
+  width: 16px;  /* smaller burger icon */
+  height: auto;
+}
+
+/* Mobile tweaks */
+@media (max-width: 600px) {
+  .site-title .logo {
+    height: 30px;
+  }
+  .site-nav .menu-icon svg {
+    width: 14px;
+  }
+}
+

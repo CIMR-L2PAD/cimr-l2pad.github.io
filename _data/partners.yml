@@ -1,0 +1,7 @@
+- name: Norwegian Meteorological Institute
+  role: CIMR L2PAD Lead. Algorithms for Sea Ice Concentration, Edge, Drift, and Type, as well as Lake Ice Cover
+  url: https://www.met.no/en
+  logo: /assets/img/logos/METNorway.jpg
+  researchers:
+    - { name: "Thomas Lavergne", role: "Project Lead", link: "" }
+

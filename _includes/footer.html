@@ -1,0 +1,60 @@
+<footer class="site-footer h-card">
+  <data class="u-url" href="{{ "/" | relative_url }}"></data>
+
+  {% assign author_name  = site.author.name | default: site.author | default: site.title %}
+  {% assign author_email = site.author.email | default: site.email %}
+  {% assign gh_user      = site.github_username | default: site.github.username %}
+
+  <div class="wrapper">
+    <div class="footer-col-wrapper">
+      
+      <!-- Left column: author + contact + GitHub/Twitter -->
+      <div class="footer-col footer-col-left">
+        {% if author_name %}
+          <p class="footer-entry">{{ author_name }}</p>
+        {% endif %}
+
+        {% if author_email %}
+          <p class="footer-entry">
+            Contact: <a href="mailto:{{ author_email }}">{{ author_email }}</a>
+          </p>
+        {% endif %}
+
+        {% if gh_user %}
+          <p class="footer-entry">
+            <svg class="svg-icon" style="vertical-align: middle;">
+              <use xlink:href="{{ '/assets/minima-social-icons.svg#github' | relative_url }}"></use>
+            </svg>
+            GitHub: <a href="https://github.com/{{ gh_user }}" target="_blank" rel="noopener">
+              https://github.com/{{ gh_user }}
+            </a>
+          </p>
+        {% endif %}
+
+        {% if site.twitter_username %}
+          <p class="footer-entry">
+            <svg class="svg-icon" style="vertical-align: middle;">
+              <use xlink:href="{{ '/assets/minima-social-icons.svg#twitter' | relative_url }}"></use>
+            </svg>
+            Twitter: <a href="https://twitter.com/{{ site.twitter_username }}" target="_blank" rel="noopener">
+              https://twitter.com/{{ site.twitter_username }}
+            </a>
+          </p>
+        {% endif %}
+      </div>
+
+      <!-- Right column: ESA funding note -->
+      <div class="footer-col footer-col-right">
+        <p class="funding-note">
+          This webpage was developed in the context of the ESA-funded CIMR L2PAD project (2023-2027) (ESA 4000143081/23/I-NS).
+        </p>
+        <p class="license-note">
+          © Licensed under 
+          <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">
+            CC-BY 4.0
+          </a>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>

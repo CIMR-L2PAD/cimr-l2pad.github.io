@@ -1,0 +1,32 @@
+# --- Site basics ---
+title: ""
+description: "Copernicus Imaging Microwave Radiometer (CIMR)"
+url: "https://cimr-l2pad.github.io"
+baseurl: ""
+
+# --- Theme ---
+theme: minima
+
+# --- Navigation (top links) ---
+header_pages:
+  - index.md
+  - cimr.md
+  - team.md
+  - news.md       
+
+# --- Author / Org info ---
+author:
+  name: "Thomas Lavergne & CIMR L2PAD Team"
+  email: thomasl@met.no
+
+# --- GitHub ---
+github_username: cimr-l2pad
+
+# --- Social links ---
+minima:
+  social_links:
+    - { platform: github,  user_url: "https://github.com/cimr-l2pad" }
+
+# --- Build settings ---
+markdown: kramdown
+permalink: pretty

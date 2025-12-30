@@ -1,0 +1,35 @@
+<div class="partner-card">
+  <a class="partner-logo-link" href="{{ partner.url }}" target="_blank" rel="noopener">
+    <img class="partner-logo" src="{{ partner.logo | relative_url }}" alt="{{ partner.name }} logo">
+  </a>
+  <div class="partner-meta">
+    <h3 class="partner-name">
+      {% if partner.url %}
+        <a href="{{ partner.url }}" target="_blank" rel="noopener">{{ partner.name }}</a>
+      {% else %}
+        {{ partner.name }}
+      {% endif %}
+    </h3>
+
+    <!-- NEW: partner role -->
+    {% assign partner_role = partner.role | default: partner.contribution %}
+    {% if partner_role %}
+      <div class="partner-role">{{ partner_role }}</div>
+    {% endif %}
+
+    {% if partner.researchers and partner.researchers.size > 0 %}
+      <ul class="partner-people">
+        {% for p in partner.researchers %}
+          <li>
+            {% if p.link and p.link != "" %}
+              <a href="{{ p.link }}" target="_blank" rel="noopener">{{ p.name }}</a>
+            {% else %}
+              {{ p.name }}
+            {% endif %}
+            {% if p.role %}: <span class="role">{{ p.role }}</span>{% endif %}
+          </li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+  </div>
+</div>
