@@ -77,6 +77,19 @@ h3 {
   text-decoration: none;
 }
 
+.site-nav {
+  background-color: var(--background-color);
+  color: var(--font-color);
+  font-family: var(--font-family);
+  display: flex;
+  align-items: center;
+}
+
+.site-nav .menu-icon svg {
+  width: 16px;  /* smaller burger icon */
+  height: auto;
+}
+
 .site-title {
   background-color: var(--background-color);
   color: var(--font-color);
@@ -157,17 +170,6 @@ h3 {
 }
 .license-note a:hover { text-decoration: underline; }
 
-/* NAVIGATION STYLING */
-.site-nav {
-  display: flex;
-  align-items: center;
-}
-
-/* Burger menu icon size (desktop + mobile) */
-.site-nav .menu-icon svg {
-  width: 16px;  /* smaller burger icon */
-  height: auto;
-}
 
 /* Mobile tweaks */
 @media (max-width: 600px) {
