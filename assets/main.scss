@@ -31,6 +31,12 @@ body {
    font-family: roboto,arial,serif;
 }
 
+header {
+   background-color: #eeeeee;
+   color: #013140;
+   font-family: applegothic,roboto,arial,serif;
+}
+
 // Custom styles for dark mode
 @media (prefers-color-scheme: dark) {
   body {
