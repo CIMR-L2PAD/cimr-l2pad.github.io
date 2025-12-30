@@ -7,12 +7,26 @@
 
 /* Override with project-wide style guide (same as ATBDs and other docs) */
 
+// General purpose global variables
+:root { --header-h: 96px; }
+
+// Styling of the light mode
 :root {
   --font-family: roboto,arial,serif;
   --font-color: #013140;
   --background-color: #eeeeee;
 }
 
+// Styling of the dark mode
+@media (prefers-color-scheme: dark) {
+  :root {
+    --font-family: roboto,arial,serif;
+    --font-color: #eeeeee;
+    --background-color: #013140;
+  }
+}
+
+// Appluy variables
 body {
   font-family: var(--font-family);
   color: var(--font-color);
@@ -35,15 +49,6 @@ h3 {
    font-family: applegothic,roboto,arial,serif;
 }
 
-// Custom styles for dark mode
-@media (prefers-color-scheme: dark) {
-  :root {
-    --font-family: roboto,arial,serif;
-    --font-color: #eeeeee;
-    --background-color: #013140;
-  }
-}
-
 /* HEADER LAYOUT: logo + menu aligned left */
 .site-header .wrapper {
   background-color: var(--background-color);
@@ -54,6 +59,17 @@ h3 {
   justify-content: flex-start; /* everything to the left */
   gap: 1rem;                   /* space between logo and menu */
   padding-left: 0;             /* flush logo to page edge */
+}
+
+.site-header {
+  background-color: var(--background-color);
+  color: var(--font-color);
+  font-family: var(--font-family);
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 1000;
+  border-top: 1px solid rgba(0,0,0,.06);
+  border-bottom: 1px solid rgba(0,0,0,.06);
 }
 
 .site-title {
@@ -84,7 +100,80 @@ h3 {
   white-space: nowrap;
 }
 
-:root { --header-h: 96px; } /* set to your real header height */
+
+.page-content { padding-top: calc(var(--header-h) + 1.0rem); }
+
+/* Optional: ensure in-page anchors aren't hidden under the header */
+.page-content h2, .page-content h3, .page-content h4 { scroll-margin-top: var(--header-h); }
+
+/* Footer: thin top border to match header bottom */
+.site-footer {
+  background-color: var(--background-color);
+  color: var(--font-color);
+  font-family: var(--font-family);
+  border-top: 1px solid rgba(0,0,0,.06);
+}
+
+.footer-col-wrapper {
+  background-color: var(--background-color);
+  color: var(--font-color);
+  font-family: var(--font-family);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;  /* change to center/flex-end if you prefer */
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.footer-col-left,
+.footer-col-right { flex: 1; }
+
+.footer-entry { margin: 0.25rem 0; }
+
+.footer-col-left a {
+  color: inherit;
+  text-decoration: none;
+}
+.footer-col-left a:hover { text-decoration: underline; }
+
+.funding-note {
+  color: inherit;
+  margin: 0.25rem 0;
+  text-align: right;
+}
+
+.license-note {
+  color: inherit;
+  text-align: right;
+  margin: 0.25rem 0;
+}
+.license-note a {
+  color: inherit;
+  text-decoration: none;
+}
+.license-note a:hover { text-decoration: underline; }
+
+/* NAVIGATION STYLING */
+.site-nav {
+  display: flex;
+  align-items: center;
+}
+
+/* Burger menu icon size (desktop + mobile) */
+.site-nav .menu-icon svg {
+  width: 16px;  /* smaller burger icon */
+  height: auto;
+}
+
+/* Mobile tweaks */
+@media (max-width: 600px) {
+  .site-title .logo {
+    height: 30px;
+  }
+  .site-nav .menu-icon svg {
+    width: 14px;
+  }
+}
 
 /* --- Partner grid & cards --- */
 .partners-grid {
@@ -151,83 +240,3 @@ h3 {
   color: #555;
   margin: -0.15rem 0 0.35rem 0; /* tighten spacing under the name */
 }
-
-/* Header & page layout */
-.site-header {
-  position: fixed;
-  top: 0; left: 0; right: 0;
-  z-index: 1000;
-  background: #f6f8fa;
-  border-top: 1px solid rgba(0,0,0,.06);
-  border-bottom: 1px solid rgba(0,0,0,.06);
-}
-
-.page-content { padding-top: calc(var(--header-h) + 1.0rem); }
-
-/* Optional: ensure in-page anchors aren't hidden under the header */
-.page-content h2, .page-content h3, .page-content h4 { scroll-margin-top: var(--header-h); }
-
-/* Footer: thin top border to match header bottom */
-.site-footer {
-  background: #f6f8fa;
-  border-top: 1px solid rgba(0,0,0,.06);
-}
-
-.footer-col-wrapper {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;  /* change to center/flex-end if you prefer */
-  flex-wrap: wrap;
-  gap: 1rem;
-}
-
-.footer-col-left,
-.footer-col-right { flex: 1; }
-
-.footer-entry { margin: 0.25rem 0; }
-
-.footer-col-left a {
-  color: #0366d6;
-  text-decoration: none;
-}
-.footer-col-left a:hover { text-decoration: underline; }
-
-.funding-note {
-  color: inherit;
-  margin: 0.25rem 0;
-  text-align: right;
-}
-
-.license-note {
-  color: inherit;
-  text-align: right;
-  margin: 0.25rem 0;
-}
-.license-note a {
-  color: #0366d6;
-  text-decoration: none;
-}
-.license-note a:hover { text-decoration: underline; }
-
-/* NAVIGATION STYLING */
-.site-nav {
-  display: flex;
-  align-items: center;
-}
-
-/* Burger menu icon size (desktop + mobile) */
-.site-nav .menu-icon svg {
-  width: 16px;  /* smaller burger icon */
-  height: auto;
-}
-
-/* Mobile tweaks */
-@media (max-width: 600px) {
-  .site-title .logo {
-    height: 30px;
-  }
-  .site-nav .menu-icon svg {
-    width: 14px;
-  }
-}
-
