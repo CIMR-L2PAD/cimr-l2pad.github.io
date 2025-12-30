@@ -5,6 +5,32 @@
 /* Load minima defaults */
 @import "minima";
 
+/* Override with project-wide style guide (same as ATBDs and other docs) */
+h1 {
+   color: #013140;
+   font-family: applegothic,roboto,arial,serif;
+}
+
+h2 {
+   color: #013140;
+   font-family: applegothic,roboto,arial,serif;
+}
+
+h3 {
+   color: #013140;
+   font-family: applegothic,roboto,arial,serif;
+}
+
+body {
+   color: #013140;
+   font-family: roboto,arial,serif;
+}
+
+p {
+    text-align: justify;
+}
+
+
 /* HEADER LAYOUT: logo + menu aligned left */
 .site-header .wrapper {
   display: flex;
@@ -22,7 +48,7 @@
 }
 
 .site-title .logo {
-  height: 48px; /* adjust to make logo smaller/larger */
+  height: 96px; /* adjust to make logo smaller/larger */
   width: auto;
   object-fit: contain;
 }
@@ -33,7 +59,7 @@
   white-space: nowrap;
 }
 
-:root { --header-h: 64px; } /* set to your real header height */
+:root { --header-h: 96px; } /* set to your real header height */
 
 /* --- Partner grid & cards --- */
 .partners-grid {
