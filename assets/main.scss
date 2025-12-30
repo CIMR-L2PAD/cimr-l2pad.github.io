@@ -6,60 +6,49 @@
 @import "minima";
 
 /* Override with project-wide style guide (same as ATBDs and other docs) */
+
+:root {
+  --font-family: roboto,arial,serif;
+  --font-color: #013140;
+  --background-color: #eeeeee;
+}
+
+body {
+  font-family: var(--font-family);
+  color: var(--font-color);
+  background-color: var(--background-color);
+}
+
 p {
     text-align: justify;
 }
 
 h1 {
-   color: #013140;
    font-family: applegothic,roboto,arial,serif;
 }
 
 h2 {
-   color: #013140;
    font-family: applegothic,roboto,arial,serif;
 }
 
 h3 {
-   color: #013140;
-   font-family: applegothic,roboto,arial,serif;
-}
-
-body {
-   color: #013140;
-   font-family: roboto,arial,serif;
-}
-
-header {
-   color: #013140;
-   font-family: applegothic,roboto,arial,serif;
-}
-
-footer {
-   color: #013140;
    font-family: applegothic,roboto,arial,serif;
 }
 
 // Custom styles for dark mode
 @media (prefers-color-scheme: dark) {
-  body {
-    background-color: #013140;
-    color: #eeeeee;
-  }
-
-  header {
-    background-color: #013140;
-    color: #eeeeee;
-  }
-
-  footer {
-    background-color: #013140;
-    color: #eeeeee;
+  :root {
+    --font-family: roboto,arial,serif;
+    --font-color: #eeeeee;
+    --background-color: #013140;
   }
 }
 
 /* HEADER LAYOUT: logo + menu aligned left */
 .site-header .wrapper {
+  background-color: var(--background-color);
+  color: var(--font-color);
+  font-family: var(--font-family);
   display: flex;
   align-items: center;
   justify-content: flex-start; /* everything to the left */
@@ -68,6 +57,9 @@ footer {
 }
 
 .site-title {
+  background-color: var(--background-color);
+  color: var(--font-color);
+  font-family: var(--font-family);
   display: flex;
   align-items: center;
   gap: .5rem;
