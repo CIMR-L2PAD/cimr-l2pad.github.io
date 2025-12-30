@@ -26,7 +26,13 @@
   }
 }
 
-// Appluy variables
+:root {
+  --hf-font-color: var(--background-color);
+  --hf-background-color: var(--font-color);
+}
+
+
+// Apply variables
 body {
   font-family: var(--font-family);
   color: var(--font-color);
@@ -51,8 +57,8 @@ h3 {
 
 /* HEADER LAYOUT: logo + menu aligned left */
 .site-header .wrapper {
-  background-color: var(--background-color);
-  color: var(--font-color);
+  background-color: var(--hf-background-color);
+  color: var(--hf-font-color);
   font-family: var(--font-family);
   display: flex;
   align-items: center;
@@ -62,8 +68,8 @@ h3 {
 }
 
 .site-header {
-  background-color: var(--background-color);
-  color: var(--font-color);
+  background-color: var(--hf-background-color);
+  color: var(--hf-font-color);
   font-family: var(--font-family);
   position: fixed;
   top: 0; left: 0; right: 0;
@@ -73,13 +79,13 @@ h3 {
 }
 
 .site-header a {
-  color: var(--font-color); /* Ensure links inherit the text color */
+  color: var(--hf-font-color); /* Ensure links inherit the text color */
   text-decoration: none;
 }
 
 .site-nav {
-  background-color: var(--background-color);
-  color: var(--font-color);
+  background-color: var(--hf-background-color);
+  color: var(--hf-font-color);
   font-family: var(--font-family);
   display: flex;
   align-items: center;
@@ -91,12 +97,12 @@ h3 {
 }
 
 .site-nav .page-link {
-  color: var(--font-color);
+  color: var(--hf-font-color);
 }
 
 .site-title {
-  background-color: var(--background-color);
-  color: var(--font-color);
+  background-color: var(--hf-background-color);
+  color: var(--hf-font-color);
   font-family: var(--font-family);
   display: flex;
   align-items: center;
@@ -105,8 +111,8 @@ h3 {
 }
 
 .site-title .logo {
-  background-color: var(--background-color);
-  color: var(--font-color);
+  background-color: var(--hf-background-color);
+  color: var(--hf-font-color);
   font-family: var(--font-family);
   height: 96px; /* adjust to make logo smaller/larger */
   width: auto;
@@ -115,8 +121,8 @@ h3 {
 
 /* Optional: hide the text title if you want only the logo */
 .site-title span {
-  background-color: var(--background-color);
-  color: var(--font-color);
+  background-color: var(--hf-background-color);
+  color: var(--hf-font-color);
   font-family: var(--font-family);
   font-size: 1.1rem;
   white-space: nowrap;
@@ -129,15 +135,15 @@ h3 {
 
 /* Footer: thin top border to match header bottom */
 .site-footer {
-  background-color: var(--background-color);
-  color: var(--font-color);
+  background-color: var(--hf-background-color);
+  color: var(--hf-font-color);
   font-family: var(--font-family);
   border-top: 1px solid rgba(0,0,0,.06);
 }
 
 .footer-col-wrapper {
-  background-color: var(--background-color);
-  color: var(--font-color);
+  background-color: var(--hf-background-color);
+  color: var(--hf-font-color);
   font-family: var(--font-family);
   display: flex;
   justify-content: space-between;
