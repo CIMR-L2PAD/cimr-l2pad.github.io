@@ -5,7 +5,7 @@ url: "https://cimr-l2pad.github.io"
 baseurl: ""
 
 # --- Theme ---
-theme: minima
+remote_theme: "jekyll/minima@593a05a"
 
 # --- Navigation (top links) ---
 header_pages:
