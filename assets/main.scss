@@ -15,6 +15,7 @@
 :root {
   --font-family: roboto,arial,serif;
   --font-color: #013140;
+  --caption-color: #333333;
   --background-color: #eeeeee;
   --hf-font-color: var(--background-color);
   --hf-background-color: var(--font-color);
@@ -42,6 +43,12 @@ h2 {
 
 h3 {
    font-family: applegothic,roboto,arial,serif;
+}
+
+.figure-caption {
+  margin-top: 0.5rem; /* Space between the figure and the caption */
+  font-size: 0.9rem;  /* Slightly smaller font size */
+  color: var(--caption-color);
 }
 
 /* HEADER LAYOUT: logo + menu aligned left */
@@ -124,6 +131,7 @@ h3 {
   :root {
     --font-family: roboto,arial,serif;
     --font-color: #eeeeee;
+    --caption-color: #666666;
     --background-color: #013140;
     --hf-font-color: var(--background-color);
     --hf-background-color: var(--font-color);

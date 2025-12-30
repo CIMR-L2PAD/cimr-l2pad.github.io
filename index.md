@@ -12,7 +12,7 @@ the Copernicus Imaging Microwave Radiometer (CIMR) mission.
   <img src="/assets/img/CIMRL2PAD_logo_blue_lite.png" 
        alt="The CIMR L2PAD logo" 
        style="max-width:100%; height:auto; border-radius:4px;">
-  <figcaption style="margin-top:0.5rem; font-size:0.9rem; color:#555;">
+  <figcaption class="fig-caption">
     The CIMR L2PAD logo (design Mai-Linn Finstad Svehagen, MET Norway)
   </figcaption>
 </figure>
