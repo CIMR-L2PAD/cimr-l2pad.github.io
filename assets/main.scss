@@ -72,6 +72,11 @@ h3 {
   border-bottom: 1px solid rgba(0,0,0,.06);
 }
 
+.site-header a {
+  color: var(--font-color); /* Ensure links inherit the text color */
+  text-decoration: none;
+}
+
 .site-title {
   background-color: var(--background-color);
   color: var(--font-color);
@@ -99,7 +104,6 @@ h3 {
   font-size: 1.1rem;
   white-space: nowrap;
 }
-
 
 .page-content { padding-top: calc(var(--header-h) + 1.0rem); }
 
