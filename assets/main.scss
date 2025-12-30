@@ -10,7 +10,8 @@
 // General purpose global variables
 :root { --header-h: 96px; }
 
-// Styling of the light mode
+// Styling of the light mode. Note that the header and footer (hf) will
+//    have the 'opposite' colors as the body
 :root {
   --font-family: roboto,arial,serif;
   --font-color: #013140;
@@ -108,13 +109,35 @@ h3 {
   margin: 0;
 }
 
-.site-title .logo {
+.site-title .logo-light-mode {
   background-color: var(--hf-background-color);
   color: var(--hf-font-color);
   font-family: var(--font-family);
   height: 96px; /* adjust to make logo smaller/larger */
   width: auto;
   object-fit: contain;
+  display: block;
+}
+
+.site-title .logo-dark-mode {
+  background-color: var(--hf-background-color);
+  color: var(--hf-font-color);
+  font-family: var(--font-family);
+  height: 96px; /* adjust to make logo smaller/larger */
+  width: auto;
+  object-fit: contain;
+  display: none;
+}
+
+/* Switch to dark mode logo */
+@media (prefers-color-scheme: dark) {
+  .site-title logo-light-mode {
+    display: none;
+  }
+
+  .site-title logo-dark-mode {
+    display: block;
+  }
 }
 
 /* Optional: hide the text title if you want only the logo */
