@@ -6,6 +6,10 @@
 @import "minima";
 
 /* Override with project-wide style guide (same as ATBDs and other docs) */
+p {
+    text-align: justify;
+}
+
 h1 {
    color: #013140;
    font-family: applegothic,roboto,arial,serif;
@@ -33,11 +37,7 @@ body {
     background-color: #013140;
     color: #eeeeee;
   }
-
-p {
-    text-align: justify;
 }
-
 
 /* HEADER LAYOUT: logo + menu aligned left */
 .site-header .wrapper {
