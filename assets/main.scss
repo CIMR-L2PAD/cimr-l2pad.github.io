@@ -67,6 +67,9 @@ h3 {
 }
 
 .site-title .logo {
+  background-color: var(--background-color);
+  color: var(--font-color);
+  font-family: var(--font-family);
   height: 96px; /* adjust to make logo smaller/larger */
   width: auto;
   object-fit: contain;
@@ -74,6 +77,9 @@ h3 {
 
 /* Optional: hide the text title if you want only the logo */
 .site-title span {
+  background-color: var(--background-color);
+  color: var(--font-color);
+  font-family: var(--font-family);
   font-size: 1.1rem;
   white-space: nowrap;
 }
