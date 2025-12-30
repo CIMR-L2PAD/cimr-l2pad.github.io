@@ -26,13 +26,16 @@ h3 {
 }
 
 body {
-   background-color: #eeeeee;
    color: #013140;
    font-family: roboto,arial,serif;
 }
 
 header {
-   background-color: #eeeeee;
+   color: #013140;
+   font-family: applegothic,roboto,arial,serif;
+}
+
+footer {
    color: #013140;
    font-family: applegothic,roboto,arial,serif;
 }
@@ -40,6 +43,16 @@ header {
 // Custom styles for dark mode
 @media (prefers-color-scheme: dark) {
   body {
+    background-color: #013140;
+    color: #eeeeee;
+  }
+
+  header {
+    background-color: #013140;
+    color: #eeeeee;
+  }
+
+  footer {
     background-color: #013140;
     color: #eeeeee;
   }
