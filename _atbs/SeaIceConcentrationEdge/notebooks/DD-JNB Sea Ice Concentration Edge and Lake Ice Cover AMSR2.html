@@ -1,0 +1,1160 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Sea Ice Concentration, Edge, and Lake Ice Cover from AMSR2 TB data &#8212; CIMR L2 SIC, SIED, and LIC ATBD</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles.css?v=df429b37" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/DD-JNB Sea Ice Concentration Edge and Lake Ice Cover AMSR2';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Sea Ice Concentration and Edge demonstrated on the SCEPS Polar Scene" href="DD-JNB%20Sea%20Ice%20Concentration%20and%20Edge%20on%20SCEPS%20Polar%20Scene.html" />
+    <link rel="prev" title="Annex" href="../annex.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+
+  <div class="bd-header-announcement container-fluid bd-header-announcement">
+    <div class="bd-header-announcement__content">This is V2D of the ATBD, prepared for TC#2 (May 2025)</div>
+  </div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.jpg" class="logo__image only-light" alt="CIMR L2 SIC, SIED, and LIC ATBD - Home"/>
+    <script>document.write(`<img src="../_static/logo.jpg" class="logo__image only-dark" alt="CIMR L2 SIC, SIED, and LIC ATBD - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    CIMR L2 SIC, SIED, SIC1H, SIED1H and LIC ATBD
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../00_abstract.html">Abstract</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01_applicable_ref_docs.html">Applicable and reference documents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02_acronyms_and_definitions.html">Acronyms and definitions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03_introduction_purpose_scope.html">Introduction, purpose and scope</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../04_background_justification_algorithm.html">Background and justification of selected algorithm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05_baseline_algorithm_definition_SIC.html">Baseline Algorithm Definition for SIC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05_baseline_algorithm_definition_SIED.html">Baseline Algorithm Definition for SIED</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05_baseline_algorithm_definition_LIC.html">Baseline Algorithm Definition for LIC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05_baseline_algorithm_definition_SIE.html">Baseline Algorithm Definition for SIE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../06_input_output_data_definition_SIC-SIED.html">Algorithm Input and Output Data Definition (IODD) for SIC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../06_input_output_data_definition_LIC.html">Algorithm Input and Output Data Definition (IODD) for LIC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references.html">References</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../annex.html">Annex</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Sea Ice Concentration Algorithm Demonstration on AMSR2 data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="DD-JNB%20Sea%20Ice%20Concentration%20and%20Edge%20on%20SCEPS%20Polar%20Scene.html">Sea Ice Concentration Algorithm Demonstration on SCEPS Polar Scene</a></li>
+<li class="toctree-l2"><a class="reference internal" href="DD-JNB%20Sea%20Ice%20Concentration%20and%20Edge%20on%20SCEPS%20Polar%20Scene%20Performance%20Assessement.html">Sea Ice Concentration Algorithm Demonstration on SCEPS Polar Scene (Performance Assessment)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="DD-JNB%20Sea%20Ice%20Extent%20and%20Area.html">Sea Ice Extent and Area</a></li>
+<li class="toctree-l2"><a class="reference internal" href="DD-JNB%20Sea%20Ice%20Concentration%20Offline%20Preparation.html">Dynamic tuning of the SIC algorithm (OFFLINE chain)</a></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/CIMR-L2PAD/SeaIceConcentrationEdge_ATBD" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Source repository"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/notebooks/DD-JNB Sea Ice Concentration Edge and Lake Ice Cover AMSR2.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Sea Ice Concentration, Edge, and Lake Ice Cover from AMSR2 TB data</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#locate-di-tds-jnb">Locate DI-TDS-JNB</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#define-the-sic-algorithms">Define the SIC algorithms</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#offline-preparation-tune-the-sic-algorithms">Offline preparation : tune the SIC algorithms</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#run-the-cka-kka-and-ka-sic-algorithms-on-the-tb-maps">Run the <code class="docutils literal notranslate"><span class="pre">CKA</span></code>, <code class="docutils literal notranslate"><span class="pre">KKA</span></code>, and <code class="docutils literal notranslate"><span class="pre">KA</span></code> SIC algorithms on the TB maps</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#run-the-pan-sharpening-algorithm">Run the pan-sharpening algorithm</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#run-the-sea-ice-edge-algorithm">Run the Sea Ice Edge algorithm</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lake-ice-cover-over-the-great-lakes">Lake Ice Cover over the Great Lakes</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="sea-ice-concentration-edge-and-lake-ice-cover-from-amsr2-tb-data">
+<h1>Sea Ice Concentration, Edge, and Lake Ice Cover from AMSR2 TB data<a class="headerlink" href="#sea-ice-concentration-edge-and-lake-ice-cover-from-amsr2-tb-data" title="Link to this heading">#</a></h1>
+<p><strong>Authors</strong>: T. Lavergne (METNO)</p>
+<p>Demonstration notebook [DD-JNB] V1 prepared for Preliminary Design Review (PDR) in the CIMR L2PAD project. Updated (V2D) for TC#2 by adding a section on Lake Ice Cover.</p>
+<p>This notebook demonstrates tuning and application of the SIC, SIED, and LIC algorithm on daily gridded TB data from the AMSR2 mission.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span><span class="o">,</span> <span class="nn">sys</span>
+<span class="kn">from</span> <span class="nn">importlib</span> <span class="kn">import</span> <span class="n">reload</span>
+
+<span class="kn">import</span> <span class="nn">xarray</span> <span class="k">as</span> <span class="nn">xr</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">OrderedDict</span>
+
+<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pylab</span> <span class="k">as</span> <span class="n">plt</span>
+<span class="kn">import</span> <span class="nn">matplotlib.image</span> <span class="k">as</span> <span class="nn">img</span>
+
+<span class="kn">import</span> <span class="nn">cartopy.crs</span> <span class="k">as</span> <span class="nn">ccrs</span>
+<span class="kn">import</span> <span class="nn">cartopy.feature</span> <span class="k">as</span> <span class="nn">cfeature</span>
+
+<span class="kn">import</span> <span class="nn">cmocean</span>
+<span class="kn">import</span> <span class="nn">copy</span>
+
+<span class="kn">import</span> <span class="nn">pyresample</span> <span class="k">as</span> <span class="nn">pr</span>
+
+<span class="kn">import</span> <span class="nn">json</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="s1">&#39;/algorithm/&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="p">:</span>
+    <span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="s1">&#39;../algorithm&#39;</span><span class="p">))</span>
+
+<span class="c1"># software modules to implement the SIC algorithm</span>
+<span class="kn">from</span> <span class="nn">sirrdp</span> <span class="kn">import</span> <span class="n">rrdp_file</span>
+<span class="kn">from</span> <span class="nn">pmr_sic</span> <span class="kn">import</span> <span class="n">tiepoints</span> <span class="k">as</span> <span class="n">tp</span>
+<span class="kn">from</span> <span class="nn">pmr_sic</span> <span class="kn">import</span> <span class="n">hybrid_algo</span>
+<span class="kn">from</span> <span class="nn">pmr_sic</span> <span class="kn">import</span> <span class="n">algo</span> <span class="k">as</span> <span class="n">single_algo</span>
+<span class="kn">from</span> <span class="nn">pmr_sic</span> <span class="kn">import</span> <span class="n">common</span>
+
+<span class="c1"># software modules to implement the pan-sharpening algorithm</span>
+<span class="kn">from</span> <span class="nn">pansharpen</span> <span class="kn">import</span> <span class="n">pansharpen_gridded</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Create a data directory to hold temporary and output files that are created by the notebook.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">out_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="s1">&#39;../data&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;/output/DD-JNB_out&#39;</span>
+<span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="n">out_dir</span><span class="p">):</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">out_dir</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="locate-di-tds-jnb">
+<h2>Locate DI-TDS-JNB<a class="headerlink" href="#locate-di-tds-jnb" title="Link to this heading">#</a></h2>
+<p>The input data for this notebook are organized under [DI-TDS-JNB] (Test Data Set for Jupyter NoteBook). The default is to access this TDS online through thredds / opendap unless the environment variable <code class="docutils literal notranslate"><span class="pre">CIMR_L2PAD_JNB_TDS</span></code> is set. If it is set, it is the path to a local copy of the TDS.</p>
+<p>We access both daily gridded AMSR2 TBs, and a static land mask (ADF) in a separate file.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
+    <span class="n">tds_root</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;CIMR_L2PAD_JNB_TDS&quot;</span><span class="p">]</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Use local TDS: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">tds_root</span><span class="p">))</span>
+<span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
+    <span class="n">tds_root</span> <span class="o">=</span> <span class="s1">&#39;https://thredds.met.no/thredds/dodsC/cimr/L2PAD/DI-TDS-JNB_V2D&#39;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Use online TDS: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">tds_root</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Use online TDS: https://thredds.met.no/thredds/dodsC/cimr/L2PAD/DI-TDS-JNB_V2D
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tds_files</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+<span class="n">tds_files</span><span class="p">[</span><span class="s1">&#39;nh&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">tds_root</span> <span class="o">+</span> <span class="s2">&quot;/AMSR2_DAILY_POLAR/tc_amsr2-gw1_</span><span class="si">{}</span><span class="s2">_ease2-125_2020033112.nc&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;nh&#39;</span><span class="p">,)</span>
+<span class="n">tds_files</span><span class="p">[</span><span class="s1">&#39;sh&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">tds_root</span> <span class="o">+</span> <span class="s2">&quot;/AMSR2_DAILY_POLAR/tc_amsr2-gw1_</span><span class="si">{}</span><span class="s2">_ease2-125_2020043012.nc&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;sh&#39;</span><span class="p">,)</span>
+
+<span class="n">lmask_files</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+<span class="n">lmask_files</span><span class="p">[</span><span class="s1">&#39;nh&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">tds_root</span> <span class="o">+</span> <span class="s2">&quot;/SUPPORTING_DATA/icemask-multi-</span><span class="si">{}</span><span class="s2">-ease2-125-2020033112.nc&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;nh&#39;</span><span class="p">,)</span>
+<span class="n">lmask_files</span><span class="p">[</span><span class="s1">&#39;sh&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">tds_root</span> <span class="o">+</span> <span class="s2">&quot;/SUPPORTING_DATA/icemask-multi-</span><span class="si">{}</span><span class="s2">-ease2-125-2020043012.nc&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;sh&#39;</span><span class="p">,)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Files with input TBs:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">tds_files</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Files with ADF (Static Land Masks):</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">lmask_files</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Files with input TBs:
+ {&#39;nh&#39;: &#39;https://thredds.met.no/thredds/dodsC/cimr/L2PAD/DI-TDS-JNB_V2D/AMSR2_DAILY_POLAR/tc_amsr2-gw1_nh_ease2-125_2020033112.nc&#39;, &#39;sh&#39;: &#39;https://thredds.met.no/thredds/dodsC/cimr/L2PAD/DI-TDS-JNB_V2D/AMSR2_DAILY_POLAR/tc_amsr2-gw1_sh_ease2-125_2020043012.nc&#39;}
+
+Files with ADF (Static Land Masks):
+ {&#39;nh&#39;: &#39;https://thredds.met.no/thredds/dodsC/cimr/L2PAD/DI-TDS-JNB_V2D/SUPPORTING_DATA/icemask-multi-nh-ease2-125-2020033112.nc&#39;, &#39;sh&#39;: &#39;https://thredds.met.no/thredds/dodsC/cimr/L2PAD/DI-TDS-JNB_V2D/SUPPORTING_DATA/icemask-multi-sh-ease2-125-2020043012.nc&#39;}
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ds</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">area</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">&#39;nh&#39;</span><span class="p">,</span> <span class="s1">&#39;sh&#39;</span><span class="p">):</span>
+    <span class="n">ds</span><span class="p">[</span><span class="n">area</span><span class="p">]</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">open_dataset</span><span class="p">(</span><span class="n">tds_files</span><span class="p">[</span><span class="n">area</span><span class="p">])</span>
+
+<span class="n">lmask</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">area</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">&#39;nh&#39;</span><span class="p">,</span> <span class="s1">&#39;sh&#39;</span><span class="p">):</span>
+    <span class="n">lmask</span><span class="p">[</span><span class="n">area</span><span class="p">]</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">open_dataset</span><span class="p">(</span><span class="n">lmask_files</span><span class="p">[</span><span class="n">area</span><span class="p">])</span>
+
+<span class="n">adef</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">area</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">&#39;nh&#39;</span><span class="p">,</span> <span class="s1">&#39;sh&#39;</span><span class="p">):</span>
+    <span class="n">adef</span><span class="p">[</span><span class="n">area</span><span class="p">],</span><span class="n">_</span> <span class="o">=</span> <span class="n">pr</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">load_cf_area</span><span class="p">(</span><span class="n">ds</span><span class="p">[</span><span class="n">area</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/thomasl/mambaforge/envs/py311/lib/python3.11/site-packages/pyproj/crs/crs.py:1293: UserWarning: You will likely lose important projection information when converting to a PROJ string from another format. See: https://proj.org/faq.html#what-is-the-best-format-for-describing-coordinate-reference-systems
+  proj = self._crs.to_proj4(version=version)
+/home/thomasl/mambaforge/envs/py311/lib/python3.11/site-packages/pyproj/crs/crs.py:1293: UserWarning: You will likely lose important projection information when converting to a PROJ string from another format. See: https://proj.org/faq.html#what-is-the-best-format-for-describing-coordinate-reference-systems
+  proj = self._crs.to_proj4(version=version)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Use the land mask to mask out the TBs over land (the TBs are already filled with nans over land, but the landmask makes a cleaner masking in the coastal regions.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">area</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">&#39;nh&#39;</span><span class="p">,</span> <span class="s1">&#39;sh&#39;</span><span class="p">):</span>
+    <span class="n">lmask_bool</span> <span class="o">=</span> <span class="n">lmask</span><span class="p">[</span><span class="n">area</span><span class="p">][</span><span class="s1">&#39;ice_edge&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="o">!=</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+    <span class="k">for</span> <span class="n">var</span> <span class="ow">in</span> <span class="n">ds</span><span class="p">[</span><span class="n">area</span><span class="p">]</span><span class="o">.</span><span class="n">variables</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">var</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;tb&#39;</span><span class="p">):</span>
+            <span class="n">ds</span><span class="p">[</span><span class="n">area</span><span class="p">][</span><span class="n">var</span><span class="p">]</span> <span class="o">=</span> <span class="n">ds</span><span class="p">[</span><span class="n">area</span><span class="p">][</span><span class="n">var</span><span class="p">]</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">lmask_bool</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Display the TB images</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cmaps</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;06&#39;</span><span class="p">:</span> <span class="s1">&#39;Purples_r&#39;</span><span class="p">,</span> <span class="s1">&#39;19&#39;</span><span class="p">:</span> <span class="s1">&#39;Greens_r&#39;</span><span class="p">,</span> <span class="s1">&#39;37&#39;</span><span class="p">:</span> <span class="s1">&#39;Reds_r&#39;</span><span class="p">}</span>
+ 
+<span class="k">for</span> <span class="n">area</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">&#39;nh&#39;</span><span class="p">,</span> <span class="s1">&#39;sh&#39;</span><span class="p">):</span>
+    <span class="n">fig</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">ncols</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">nrows</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span><span class="mi">9</span><span class="p">),</span> <span class="n">sharex</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">sharey</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">ifreq</span><span class="p">,</span> <span class="n">freq</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">((</span><span class="s1">&#39;06&#39;</span><span class="p">,</span> <span class="s1">&#39;19&#39;</span><span class="p">,</span> <span class="s1">&#39;37&#39;</span><span class="p">)):</span>
+        <span class="n">cmap</span> <span class="o">=</span> <span class="n">copy</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">plt</span><span class="o">.</span><span class="n">colormaps</span><span class="p">[</span><span class="n">cmaps</span><span class="p">[</span><span class="n">freq</span><span class="p">]])</span>
+        <span class="n">cmap</span><span class="o">.</span><span class="n">set_bad</span><span class="p">(</span><span class="s1">&#39;beige&#39;</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">ipol</span><span class="p">,</span> <span class="n">pol</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">((</span><span class="s1">&#39;v&#39;</span><span class="p">,</span> <span class="s1">&#39;h&#39;</span><span class="p">)):</span>
+            <span class="n">ax</span> <span class="o">=</span> <span class="n">axs</span><span class="p">[</span><span class="n">ifreq</span><span class="p">,</span><span class="n">ipol</span><span class="p">]</span>
+            <span class="n">vname</span> <span class="o">=</span> <span class="s1">&#39;tb&#39;</span> <span class="o">+</span> <span class="n">freq</span> <span class="o">+</span> <span class="n">pol</span>
+            <span class="n">c</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">ds</span><span class="p">[</span><span class="n">area</span><span class="p">][</span><span class="n">vname</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="n">interpolation</span><span class="o">=</span><span class="s1">&#39;none&#39;</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">cmap</span><span class="p">)</span>
+            <span class="n">ax</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">([]);</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_yticks</span><span class="p">([]);</span>
+            <span class="n">cbar</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">orientation</span><span class="o">=</span><span class="s1">&#39;vertical&#39;</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
+            <span class="n">cbar</span><span class="o">.</span><span class="n">set_label</span><span class="p">(</span><span class="n">ds</span><span class="p">[</span><span class="n">area</span><span class="p">][</span><span class="n">vname</span><span class="p">]</span><span class="o">.</span><span class="n">long_name</span> <span class="o">+</span> <span class="s1">&#39; [K]&#39;</span><span class="p">)</span>
+
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/e126e7e44f378f514068d5184e2a957bd38620b5f2fddaa7eeee571820c2b30a.png" src="../_images/e126e7e44f378f514068d5184e2a957bd38620b5f2fddaa7eeee571820c2b30a.png" />
+<img alt="../_images/c0a1f3122e78132587a80e74d5ca3b02983f3ce8f57ff63dea60f292f9af3959.png" src="../_images/c0a1f3122e78132587a80e74d5ca3b02983f3ce8f57ff63dea60f292f9af3959.png" />
+</div>
+</div>
+</section>
+<section id="define-the-sic-algorithms">
+<h2>Define the SIC algorithms<a class="headerlink" href="#define-the-sic-algorithms" title="Link to this heading">#</a></h2>
+<p>The CIMR Level-2 Sea Ice Concentration algorithm is based on operating several algorithms and combining their resulting fields into a final SIC variable (among others using a pan-sharpening algorithm).</p>
+<p>We first define the 3 algorithms that will be run: <code class="docutils literal notranslate"><span class="pre">CKA</span></code>, <code class="docutils literal notranslate"><span class="pre">KKA</span></code>, and <code class="docutils literal notranslate"><span class="pre">KA</span></code>:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">CKA</span></code> uses brightness temperatures in C-band (6.9 GHz) V-pol, as well as Ka-band (36.5 GHz) at V- and H-pol. It is the most accurate SIC algorithms of the three, but has the coarsest resolution because of the use of C-band.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">KKA</span></code> uses brightness temperatures in K-band (18.7 GHz) V-pol, as well as Ka-band (36.5 GHz) at V- and H-pol. It is less accurate but higher resolution than <code class="docutils literal notranslate"><span class="pre">CKA</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">KA</span></code> uses brightness temperatures in Ka-band (36.5 GHz) only, both at V- and H-pol. It has the highest resolution, but is the least accurate of the three, by a significant margin.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">algos</span> <span class="o">=</span> <span class="n">OrderedDict</span><span class="p">()</span>
+<span class="n">algos</span><span class="p">[</span><span class="s1">&#39;CKA&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;channels&#39;</span><span class="p">:(</span><span class="s1">&#39;tb06v&#39;</span><span class="p">,</span> <span class="s1">&#39;tb37v&#39;</span><span class="p">,</span> <span class="s1">&#39;tb37h&#39;</span><span class="p">),</span> <span class="s1">&#39;target_band&#39;</span><span class="p">:</span><span class="s1">&#39;C&#39;</span><span class="p">}</span>
+<span class="n">algos</span><span class="p">[</span><span class="s1">&#39;KKA&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;channels&#39;</span><span class="p">:(</span><span class="s1">&#39;tb19v&#39;</span><span class="p">,</span> <span class="s1">&#39;tb37v&#39;</span><span class="p">,</span> <span class="s1">&#39;tb37h&#39;</span><span class="p">),</span> <span class="s1">&#39;target_band&#39;</span><span class="p">:</span><span class="s1">&#39;KA&#39;</span><span class="p">}</span>
+<span class="n">algos</span><span class="p">[</span><span class="s1">&#39;KA&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;channels&#39;</span><span class="p">:(</span><span class="s1">&#39;tb37v&#39;</span><span class="p">,</span> <span class="s1">&#39;tb37h&#39;</span><span class="p">),</span>  <span class="s1">&#39;target_band&#39;</span><span class="p">:</span><span class="s1">&#39;KA&#39;</span><span class="p">}</span>
+
+<span class="n">channels_needed</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">alg</span> <span class="ow">in</span> <span class="n">algos</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+    <span class="n">channels_needed</span> <span class="o">+=</span> <span class="n">algos</span><span class="p">[</span><span class="n">alg</span><span class="p">][</span><span class="s1">&#39;channels&#39;</span><span class="p">]</span>
+<span class="n">channels_needed</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">channels_needed</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="offline-preparation-tune-the-sic-algorithms">
+<h2>Offline preparation : tune the SIC algorithms<a class="headerlink" href="#offline-preparation-tune-the-sic-algorithms" title="Link to this heading">#</a></h2>
+<p>We tune the SIC algorithms to the <span class="math notranslate nohighlight">\(T_B\)</span> data itself. In the future operational implementation, the tuning will be repeated on a daily basis (with a sliding window) and directly on the CIMR brightness temperatures. This requires access to a rolling archive of L1B files (typically 5-10 days worth of L1B files).</p>
+<p>For the demonstration here, we tune the algorithm against the ESA CCI Sea Ice Concentration Round Robin Data Package (RRDP) of Pedersen et al. (2019). The relevant data files as well as routines to parse the files are stored in module <code class="docutils literal notranslate"><span class="pre">siddrp/</span></code>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Pedersen, Leif Toudal; Saldo, Roberto; Ivanova, Natalia; Kern, Stefan; Heygster, Georg; Tonboe, Rasmus; et al. (2019): Reference dataset for sea ice concentration. figshare. Dataset. <a class="reference external" href="https://doi.org/10.6084/m9.figshare.6626549.v7">https://doi.org/10.6084/m9.figshare.6626549.v7</a></p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># locate and read the RRDP files</span>
+<span class="n">rrdp_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="s1">&#39;../data&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;/CCI_SeaIce_RRDP/RRDP_v3.0/&#39;</span>
+
+<span class="n">rrdp_pos_ow</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+<span class="n">rrdp_pos_ci</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">area</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">&#39;nh&#39;</span><span class="p">,</span> <span class="s1">&#39;sh&#39;</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Locate and load RRDP for area </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">area</span><span class="o">.</span><span class="n">upper</span><span class="p">()))</span>
+    
+    <span class="k">if</span> <span class="n">area</span> <span class="o">==</span> <span class="s1">&#39;nh&#39;</span><span class="p">:</span>
+        <span class="n">winter_months</span> <span class="o">=</span> <span class="p">[</span><span class="mi">11</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+    <span class="k">elif</span> <span class="n">area</span> <span class="o">==</span> <span class="s1">&#39;sh&#39;</span><span class="p">:</span>
+        <span class="n">winter_months</span> <span class="o">=</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
+
+    <span class="c1"># load OW (Open Water) samples from RRDP SIC0 files</span>
+    <span class="n">rrdp_pos_ow</span><span class="p">[</span><span class="n">area</span><span class="p">]</span> <span class="o">=</span> <span class="n">rrdp_file</span><span class="o">.</span><span class="n">load_rrdp_samples</span><span class="p">(</span><span class="n">rrdp_dir</span><span class="p">,</span> <span class="s1">&#39;AMSR2&#39;</span><span class="p">,</span> <span class="n">area</span><span class="p">,</span> <span class="s1">&#39;ow&#39;</span><span class="p">,</span>
+                                     <span class="n">years</span><span class="o">=</span><span class="nb">range</span><span class="p">(</span><span class="mi">2016</span><span class="p">,</span> <span class="mi">2020</span><span class="p">),</span> <span class="n">months</span> <span class="o">=</span> <span class="n">winter_months</span><span class="p">,</span>
+                                     <span class="n">channels</span> <span class="o">=</span> <span class="n">channels_needed</span><span class="p">,</span>
+                                     <span class="n">max_sel</span><span class="o">=</span><span class="mi">10000</span><span class="p">,</span><span class="n">with_nwp</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">ch</span> <span class="ow">in</span> <span class="n">channels_needed</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">ch</span><span class="p">,</span> <span class="n">rrdp_pos_ow</span><span class="p">[</span><span class="n">area</span><span class="p">][</span><span class="n">ch</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span> <span class="n">rrdp_pos_ow</span><span class="p">[</span><span class="n">area</span><span class="p">][</span><span class="n">ch</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">())</span>
+
+    <span class="c1"># load CI (Closed Ice) samples from RRDP SIC1 files</span>
+    <span class="n">rrdp_pos_ci</span><span class="p">[</span><span class="n">area</span><span class="p">]</span> <span class="o">=</span> <span class="n">rrdp_file</span><span class="o">.</span><span class="n">load_rrdp_samples</span><span class="p">(</span><span class="n">rrdp_dir</span><span class="p">,</span> <span class="s1">&#39;AMSR2&#39;</span><span class="p">,</span> <span class="n">area</span><span class="p">,</span> <span class="s1">&#39;cice&#39;</span><span class="p">,</span>
+                                     <span class="n">years</span><span class="o">=</span><span class="nb">range</span><span class="p">(</span><span class="mi">2016</span><span class="p">,</span> <span class="mi">2020</span><span class="p">),</span> <span class="n">months</span> <span class="o">=</span> <span class="n">winter_months</span><span class="p">,</span>
+                                     <span class="n">channels</span> <span class="o">=</span> <span class="n">channels_needed</span><span class="p">,</span>
+                                     <span class="n">max_sel</span><span class="o">=</span><span class="mi">10000</span><span class="p">,</span><span class="n">with_nwp</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Done&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Locate and load RRDP for area NH
+Select every 2 OW points
+tb19v 181.55 223.99
+tb06v 157.44 183.84
+tb37h 128.21 236.7
+tb37v 205.42 251.49
+Select every 9 CICE points
+Locate and load RRDP for area SH
+Select every 1 OW points
+tb19v 181.45 219.68
+tb06v 157.11 175.69
+tb37h 126.58 225.67
+tb37v 205.91 246.73
+Select every 2 CICE points
+Done
+</pre></div>
+</div>
+</div>
+</div>
+<p>The tuning is run for all 3 algorithms in turn, and the result is stored in a <code class="docutils literal notranslate"><span class="pre">.json</span></code> file (could be turned into a <code class="docutils literal notranslate"><span class="pre">.xml</span></code> file) in the GPP implementation.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># helper class to write dict() to .json</span>
+<span class="k">class</span> <span class="nc">MyEncoder</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">JSONEncoder</span><span class="p">):</span>
+    <span class="c1"># https://stackoverflow.com/questions/27050108/convert-numpy-type-to-python/27050186#27050186</span>
+    <span class="k">def</span> <span class="nf">default</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obj</span><span class="p">):</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="nb">int</span><span class="p">):</span>
+            <span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="nb">float</span><span class="p">):</span>
+            <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">):</span>
+            <span class="k">return</span> <span class="n">obj</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="nb">super</span><span class="p">(</span><span class="n">MyEncoder</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">default</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># run the tuning for each algorithm in turn.</span>
+<span class="k">for</span> <span class="n">area</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">&#39;nh&#39;</span><span class="p">,</span> <span class="s1">&#39;sh&#39;</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Tune SIC algorithms for area </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">area</span><span class="o">.</span><span class="n">upper</span><span class="p">()))</span>
+    <span class="k">for</span> <span class="n">alg</span> <span class="ow">in</span> <span class="n">algos</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+    
+        <span class="c1"># Transfer the training data in a tie-point object. This involves some processing,</span>
+        <span class="c1">#  like computing the tie-points and their covariance matrices. </span>
+        <span class="n">ow_tp</span> <span class="o">=</span> <span class="n">tp</span><span class="o">.</span><span class="n">OWTiepoint</span><span class="p">(</span><span class="n">source</span><span class="o">=</span><span class="s1">&#39;tbs&#39;</span><span class="p">,</span> <span class="n">tbs</span><span class="o">=</span><span class="n">rrdp_pos_ow</span><span class="p">[</span><span class="n">area</span><span class="p">],</span> <span class="n">channels</span><span class="o">=</span><span class="n">algos</span><span class="p">[</span><span class="n">alg</span><span class="p">][</span><span class="s1">&#39;channels&#39;</span><span class="p">])</span>
+        <span class="n">ci_tp</span> <span class="o">=</span> <span class="n">tp</span><span class="o">.</span><span class="n">CICETiepoint</span><span class="p">(</span><span class="n">source</span><span class="o">=</span><span class="s1">&#39;tbs&#39;</span><span class="p">,</span> <span class="n">tbs</span><span class="o">=</span><span class="n">rrdp_pos_ci</span><span class="p">[</span><span class="n">area</span><span class="p">],</span> <span class="n">channels</span><span class="o">=</span><span class="n">algos</span><span class="p">[</span><span class="n">alg</span><span class="p">][</span><span class="s1">&#39;channels&#39;</span><span class="p">])</span>
+        <span class="n">ow_tp</span><span class="o">.</span><span class="n">instr</span> <span class="o">=</span> <span class="n">ci_tp</span><span class="o">.</span><span class="n">instr</span> <span class="o">=</span> <span class="s1">&#39;CIMR&#39;</span>
+        <span class="n">ow_tp</span><span class="o">.</span><span class="n">source</span> <span class="o">=</span> <span class="n">ci_tp</span><span class="o">.</span><span class="n">source</span> <span class="o">=</span> <span class="s1">&#39;CCI-RRDP&#39;</span>
+    
+        <span class="c1"># Tune the SIC algorithm on these tie-points</span>
+        <span class="n">tuned_algo</span> <span class="o">=</span> <span class="n">hybrid_algo</span><span class="o">.</span><span class="n">HybridSICAlgo</span><span class="p">(</span><span class="n">algos</span><span class="p">[</span><span class="n">alg</span><span class="p">][</span><span class="s1">&#39;channels&#39;</span><span class="p">],</span> <span class="n">ow_tp</span><span class="p">,</span> <span class="n">ci_tp</span><span class="p">)</span>
+    
+        <span class="c1"># Store the algorithm on disk (JSON file) for later re-use</span>
+        <span class="n">json_fn</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">out_dir</span><span class="p">,</span><span class="s1">&#39;</span><span class="si">{}</span><span class="s1">_</span><span class="si">{}</span><span class="s1">_sic_</span><span class="si">{}</span><span class="s1">.json&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">alg</span><span class="o">.</span><span class="n">upper</span><span class="p">(),</span> <span class="n">area</span><span class="o">.</span><span class="n">upper</span><span class="p">(),</span> <span class="n">ow_tp</span><span class="o">.</span><span class="n">source</span><span class="o">.</span><span class="n">upper</span><span class="p">()))</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">json_fn</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fp_out</span><span class="p">:</span>
+            <span class="n">json</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">tuned_algo</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">to_dict</span><span class="p">(),</span> <span class="n">fp_out</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">sort_keys</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="bp">cls</span><span class="o">=</span><span class="n">MyEncoder</span><span class="p">)</span>
+
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2"> SIC configuration file is in </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">alg</span><span class="p">,</span> <span class="n">json_fn</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Tune SIC algorithms for area NH
+CKA SIC configuration file is in /home/thomasl/Work/L2PAD/SeaIceConcentrationEdge_ATBD/data/output/DD-JNB_out/CKA_NH_sic_CCI-RRDP.json
+KKA SIC configuration file is in /home/thomasl/Work/L2PAD/SeaIceConcentrationEdge_ATBD/data/output/DD-JNB_out/KKA_NH_sic_CCI-RRDP.json
+KA SIC configuration file is in /home/thomasl/Work/L2PAD/SeaIceConcentrationEdge_ATBD/data/output/DD-JNB_out/KA_NH_sic_CCI-RRDP.json
+Tune SIC algorithms for area SH
+CKA SIC configuration file is in /home/thomasl/Work/L2PAD/SeaIceConcentrationEdge_ATBD/data/output/DD-JNB_out/CKA_SH_sic_CCI-RRDP.json
+KKA SIC configuration file is in /home/thomasl/Work/L2PAD/SeaIceConcentrationEdge_ATBD/data/output/DD-JNB_out/KKA_SH_sic_CCI-RRDP.json
+KA SIC configuration file is in /home/thomasl/Work/L2PAD/SeaIceConcentrationEdge_ATBD/data/output/DD-JNB_out/KA_SH_sic_CCI-RRDP.json
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="run-the-cka-kka-and-ka-sic-algorithms-on-the-tb-maps">
+<h2>Run the <code class="docutils literal notranslate"><span class="pre">CKA</span></code>, <code class="docutils literal notranslate"><span class="pre">KKA</span></code>, and <code class="docutils literal notranslate"><span class="pre">KA</span></code> SIC algorithms on the TB maps<a class="headerlink" href="#run-the-cka-kka-and-ka-sic-algorithms-on-the-tb-maps" title="Link to this heading">#</a></h2>
+<p>Once the <code class="docutils literal notranslate"><span class="pre">CKA</span></code>, <code class="docutils literal notranslate"><span class="pre">KKA</span></code>, and <code class="docutils literal notranslate"><span class="pre">KA</span></code> SIC algorithms are tuned (see above), we load them from their <code class="docutils literal notranslate"><span class="pre">.json</span></code> files and apply them on the maps of <span class="math notranslate nohighlight">\(T_B\)</span> from the Test Data Set. Because we used the AMSR section of the RRDP, we actually tuned the algorithms to the same <span class="math notranslate nohighlight">\(T_B\)</span>s (wavelength, calibration, etc…) we apply them to. This is critical to reduce retrieval biases.</p>
+<p>First, we load the algorithms from their <code class="docutils literal notranslate"><span class="pre">.json</span></code> representation, and store the algorithm object into a python dictionary.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">alg</span> <span class="ow">in</span> <span class="n">algos</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+    <span class="n">algos</span><span class="p">[</span><span class="n">alg</span><span class="p">][</span><span class="s1">&#39;algo&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">area</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">&#39;nh&#39;</span><span class="p">,</span> <span class="s1">&#39;sh&#39;</span><span class="p">):</span>
+        <span class="c1"># load 1 tune SIC algo</span>
+        <span class="n">json_fn</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">out_dir</span><span class="p">,</span><span class="s1">&#39;</span><span class="si">{}</span><span class="s1">_</span><span class="si">{}</span><span class="s1">_sic_</span><span class="si">{}</span><span class="s1">.json&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">alg</span><span class="o">.</span><span class="n">upper</span><span class="p">(),</span> <span class="n">area</span><span class="o">.</span><span class="n">upper</span><span class="p">(),</span> <span class="s1">&#39;CCI-RRDP&#39;</span><span class="p">))</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Load tuned </span><span class="si">{}</span><span class="s2"> algo from </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">alg</span><span class="p">,</span> <span class="n">json_fn</span><span class="p">))</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">json_fn</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Cannot find .json parameter file for </span><span class="si">{}</span><span class="s2"> </span><span class="si">{}</span><span class="s2"> SIC:</span><span class="se">\n\t</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">area</span><span class="o">.</span><span class="n">upper</span><span class="p">(),</span> <span class="n">alg</span><span class="p">,</span> <span class="n">json_fn</span><span class="p">))</span>
+    
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">json_fn</span><span class="p">)</span> <span class="k">as</span> <span class="n">fp</span><span class="p">:</span>
+            <span class="n">algo_sic_params</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">fp</span><span class="p">)</span>
+                                    
+        <span class="n">algo_sic_params</span> <span class="o">=</span> <span class="n">common</span><span class="o">.</span><span class="n">numpify</span><span class="p">(</span><span class="n">algo_sic_params</span><span class="p">)</span>
+        <span class="n">algos</span><span class="p">[</span><span class="n">alg</span><span class="p">][</span><span class="s1">&#39;algo&#39;</span><span class="p">][</span><span class="n">area</span><span class="p">]</span> <span class="o">=</span> <span class="n">hybrid_algo</span><span class="o">.</span><span class="n">HybridSICAlgo</span><span class="o">.</span><span class="n">from_dict</span><span class="p">(</span><span class="n">algo_sic_params</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Load tuned CKA algo from /home/thomasl/Work/L2PAD/SeaIceConcentrationEdge_ATBD/data/output/DD-JNB_out/CKA_NH_sic_CCI-RRDP.json
+Load tuned CKA algo from /home/thomasl/Work/L2PAD/SeaIceConcentrationEdge_ATBD/data/output/DD-JNB_out/CKA_SH_sic_CCI-RRDP.json
+Load tuned KKA algo from /home/thomasl/Work/L2PAD/SeaIceConcentrationEdge_ATBD/data/output/DD-JNB_out/KKA_NH_sic_CCI-RRDP.json
+Load tuned KKA algo from /home/thomasl/Work/L2PAD/SeaIceConcentrationEdge_ATBD/data/output/DD-JNB_out/KKA_SH_sic_CCI-RRDP.json
+Load tuned KA algo from /home/thomasl/Work/L2PAD/SeaIceConcentrationEdge_ATBD/data/output/DD-JNB_out/KA_NH_sic_CCI-RRDP.json
+Load tuned KA algo from /home/thomasl/Work/L2PAD/SeaIceConcentrationEdge_ATBD/data/output/DD-JNB_out/KA_SH_sic_CCI-RRDP.json
+</pre></div>
+</div>
+</div>
+</div>
+<p>Prepare the <span class="math notranslate nohighlight">\(T_B\)</span>s in a format that the algorithms can ingest: a python dictionary with all bands.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tbs</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">area</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">&#39;nh&#39;</span><span class="p">,</span> <span class="s1">&#39;sh&#39;</span><span class="p">):</span>
+    <span class="n">tbs</span><span class="p">[</span><span class="n">area</span><span class="p">]</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">ch</span> <span class="ow">in</span> <span class="n">channels_needed</span><span class="p">:</span>
+        <span class="n">tbs</span><span class="p">[</span><span class="n">area</span><span class="p">][</span><span class="n">ch</span><span class="p">]</span> <span class="o">=</span> <span class="n">ds</span><span class="p">[</span><span class="n">area</span><span class="p">][</span><span class="n">ch</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now run the SIC algorithms on the <span class="math notranslate nohighlight">\(T_B\)</span>s and store the results. The results object holds both the sea-ice concentration, the uncertainty, the Open Water Filter (OWF), and the Distance Along the Line (a by-product of the algorithm).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sic_res</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">alg</span> <span class="ow">in</span> <span class="n">algos</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+    <span class="n">sic_res</span><span class="p">[</span><span class="n">alg</span><span class="p">]</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">area</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">&#39;nh&#39;</span><span class="p">,</span> <span class="s1">&#39;sh&#39;</span><span class="p">):</span>
+        <span class="n">sic_res</span><span class="p">[</span><span class="n">alg</span><span class="p">][</span><span class="n">area</span><span class="p">]</span> <span class="o">=</span> <span class="n">algos</span><span class="p">[</span><span class="n">alg</span><span class="p">][</span><span class="s1">&#39;algo&#39;</span><span class="p">][</span><span class="n">area</span><span class="p">]</span><span class="o">.</span><span class="n">compute_sic</span><span class="p">(</span><span class="n">tbs</span><span class="p">[</span><span class="n">area</span><span class="p">])</span>
+        <span class="n">sic_res</span><span class="p">[</span><span class="n">alg</span><span class="p">][</span><span class="n">area</span><span class="p">]</span><span class="o">.</span><span class="n">sic</span> <span class="o">*=</span> <span class="mi">100</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can visualize the maps of SIC, uncertainties, and OWF as computed by the three algorithms <code class="docutils literal notranslate"><span class="pre">CKA</span></code>, <code class="docutils literal notranslate"><span class="pre">KKA</span></code>, and <code class="docutils literal notranslate"><span class="pre">KA</span></code> algorithms.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">plot_sic_results</span><span class="p">(</span><span class="n">sic_res</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">zoom</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">only_sic</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">ax</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">only_sic</span><span class="p">:</span>
+            <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">ncols</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="mi">6</span><span class="p">),</span> <span class="n">sharex</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">sharey</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+            <span class="n">ax</span> <span class="o">=</span> <span class="p">[</span><span class="n">ax</span><span class="p">,]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">ncols</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">13</span><span class="p">,</span><span class="mi">4</span><span class="p">),</span> <span class="n">sharex</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">sharey</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">zoom</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">shape</span> <span class="o">=</span> <span class="n">sic_res</span><span class="o">.</span><span class="n">sic</span><span class="o">.</span><span class="n">shape</span>
+        <span class="k">if</span> <span class="n">zoom</span> <span class="o">==</span> <span class="s1">&#39;zoom-nh&#39;</span><span class="p">:</span>
+            <span class="n">xlim</span> <span class="o">=</span> <span class="p">(</span><span class="mi">330</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">//</span><span class="mi">3</span><span class="p">)</span>
+            <span class="n">ylim</span> <span class="o">=</span> <span class="p">(</span><span class="mi">3</span><span class="o">*</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">//</span><span class="mi">4</span><span class="p">,</span> <span class="mi">400</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">zoom</span> <span class="o">==</span> <span class="s1">&#39;zoom-na&#39;</span><span class="p">:</span>
+            <span class="n">xlim</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">250</span><span class="p">)</span>
+            <span class="n">ylim</span> <span class="o">=</span> <span class="p">(</span><span class="mi">3</span><span class="o">*</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">//</span><span class="mi">4</span><span class="p">,</span> <span class="mi">400</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">zoom</span> <span class="o">==</span> <span class="s1">&#39;zoom-sh&#39;</span><span class="p">:</span>
+            <span class="n">xlim</span> <span class="o">=</span> <span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="mi">450</span><span class="p">)</span>
+            <span class="n">ylim</span> <span class="o">=</span> <span class="p">(</span><span class="mi">380</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Unknown zoom </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">zoom</span><span class="p">))</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">xlim</span> <span class="o">=</span> <span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+        <span class="n">ylim</span> <span class="o">=</span> <span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+    
+    <span class="c1"># Sea Ice Concentration</span>
+    <span class="n">cmap</span> <span class="o">=</span> <span class="n">copy</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">cmocean</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">ice</span><span class="p">);</span> <span class="n">cmap</span><span class="o">.</span><span class="n">set_bad</span><span class="p">(</span><span class="s1">&#39;beige&#39;</span><span class="p">)</span>
+    <span class="n">c</span> <span class="o">=</span> <span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">sic_res</span><span class="o">.</span><span class="n">sic</span><span class="p">,</span> <span class="n">interpolation</span><span class="o">=</span><span class="s1">&#39;none&#39;</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">cmap</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+    <span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">([]);</span> <span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_yticks</span><span class="p">([])</span>
+    <span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="o">*</span><span class="n">xlim</span><span class="p">);</span> <span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="o">*</span><span class="n">ylim</span><span class="p">)</span>
+    <span class="n">cbar</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">orientation</span><span class="o">=</span><span class="s1">&#39;vertical&#39;</span><span class="p">,</span> <span class="n">shrink</span><span class="o">=</span><span class="mf">0.75</span><span class="p">)</span>
+    <span class="n">cbar</span><span class="o">.</span><span class="n">set_label</span><span class="p">(</span><span class="s1">&#39;(Raw) Sea Ice Concentration [%]&#39;</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">only_sic</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">ax</span>
+    
+    <span class="c1"># Sea Ice Concentration Uncertainty</span>
+    <span class="n">cmap</span> <span class="o">=</span> <span class="n">copy</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">cmocean</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">thermal</span><span class="p">);</span> <span class="n">cmap</span><span class="o">.</span><span class="n">set_bad</span><span class="p">(</span><span class="s1">&#39;beige&#39;</span><span class="p">)</span>
+    <span class="n">c</span> <span class="o">=</span> <span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">sic_res</span><span class="o">.</span><span class="n">sdev</span><span class="p">,</span> <span class="n">interpolation</span><span class="o">=</span><span class="s1">&#39;none&#39;</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">cmap</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+    <span class="n">cbar</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">orientation</span><span class="o">=</span><span class="s1">&#39;vertical&#39;</span><span class="p">,</span> <span class="n">shrink</span><span class="o">=</span><span class="mf">0.75</span><span class="p">)</span>
+    <span class="n">cbar</span><span class="o">.</span><span class="n">set_label</span><span class="p">(</span><span class="s1">&#39;SIC Uncertainty [%]&#39;</span><span class="p">)</span>
+
+    <span class="c1"># Open Water Filter</span>
+    <span class="n">cmap</span> <span class="o">=</span> <span class="n">copy</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">Reds_r</span><span class="p">,);</span> <span class="n">cmap</span><span class="o">.</span><span class="n">set_bad</span><span class="p">(</span><span class="s1">&#39;beige&#39;</span><span class="p">)</span>
+    <span class="n">c</span> <span class="o">=</span> <span class="n">ax</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">sic_res</span><span class="o">.</span><span class="n">owf</span><span class="p">,</span> <span class="n">interpolation</span><span class="o">=</span><span class="s1">&#39;none&#39;</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">cmap</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">cbar</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">orientation</span><span class="o">=</span><span class="s1">&#39;vertical&#39;</span><span class="p">,</span> <span class="n">shrink</span><span class="o">=</span><span class="mf">0.75</span><span class="p">)</span>
+    <span class="n">cbar</span><span class="o">.</span><span class="n">set_label</span><span class="p">(</span><span class="s1">&#39;Open Water Filter [1]&#39;</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">ax</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">area</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">&#39;nh&#39;</span><span class="p">,</span> <span class="s1">&#39;sh&#39;</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">alg</span> <span class="ow">in</span> <span class="n">algos</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+        <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_sic_results</span><span class="p">(</span><span class="n">sic_res</span><span class="p">[</span><span class="n">alg</span><span class="p">][</span><span class="n">area</span><span class="p">])</span>
+        <span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="n">alg</span> <span class="o">+</span> <span class="s1">&#39; (&#39;</span> <span class="o">+</span> <span class="s1">&#39;,&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">algos</span><span class="p">[</span><span class="n">alg</span><span class="p">][</span><span class="s1">&#39;channels&#39;</span><span class="p">])</span> <span class="o">+</span> <span class="s1">&#39;)&#39;</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/d937990b7ad86499c1f2508a11fbe2357376ce1e65023f8f857b59691b89876a.png" src="../_images/d937990b7ad86499c1f2508a11fbe2357376ce1e65023f8f857b59691b89876a.png" />
+<img alt="../_images/9cdc2d8f95e3060e57ff981ffc3bfcdcfe88b1a2532320163300f25d93f258e3.png" src="../_images/9cdc2d8f95e3060e57ff981ffc3bfcdcfe88b1a2532320163300f25d93f258e3.png" />
+<img alt="../_images/08e22106d3104a0be0cc51cc61fd5afe1641b5a93617bd8827c09afdcab6d93f.png" src="../_images/08e22106d3104a0be0cc51cc61fd5afe1641b5a93617bd8827c09afdcab6d93f.png" />
+<img alt="../_images/66af3757dc30931c7da172a2ac28b2b3e8c8373d934ea8455e584106ca4b4ca0.png" src="../_images/66af3757dc30931c7da172a2ac28b2b3e8c8373d934ea8455e584106ca4b4ca0.png" />
+<img alt="../_images/99192324bcfdfaabe4aceaa9a3792a00e3eb360f2209b0f031f9bfdf07f2d154.png" src="../_images/99192324bcfdfaabe4aceaa9a3792a00e3eb360f2209b0f031f9bfdf07f2d154.png" />
+<img alt="../_images/06d9c44584c35dc9da02e9730accc6abedc1cb8f2c6dbb348cb3b4b0b25e7047.png" src="../_images/06d9c44584c35dc9da02e9730accc6abedc1cb8f2c6dbb348cb3b4b0b25e7047.png" />
+</div>
+</div>
+<p>These maps confirm the general expectations for the 3 algorithms: <code class="docutils literal notranslate"><span class="pre">CKA</span></code> has the lowest uncertainty (around 2%), <code class="docutils literal notranslate"><span class="pre">KKA</span></code> has intermediate uncertainty (around 3% over the ocean, and 4% over the ice). <code class="docutils literal notranslate"><span class="pre">KA</span></code> has high uncertainties, above 10%, even more so in the Southern Hemisphere. The large uncertainty in <code class="docutils literal notranslate"><span class="pre">KA</span></code> SICs translates into high values of the “raw” SIC fields where intense weather conditions are over the ocean, and large underestimation over the sea ice. The increased <code class="docutils literal notranslate"><span class="pre">KA</span></code> uncertainty in the Southern Hemisphere can be because the atmospheric wetness (vapour and liquid water) is higher there than in the Northern Hemisphere, combined with the lack of clear signature difference between first-year ice and multiyear ice.</p>
+<p>The increase in uncertainty is reflected in the performance of the Open Water Filter. The Open Water Filter is True (value = 1) when the grid cell is detected as “probably water”. The influence of the weather on the <code class="docutils literal notranslate"><span class="pre">KA</span></code> SICs is such that the <code class="docutils literal notranslate"><span class="pre">KA</span></code> Open Water Filter is almost unusable in both hemisphere (in practice, one would use the Open Water Filter of <code class="docutils literal notranslate"><span class="pre">KKA</span></code> to mask the <code class="docutils literal notranslate"><span class="pre">KA</span></code> SIC fields).</p>
+<p>We can now zoom in to show the difference of spatial resolution between the various algorithms.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">ncols</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">nrows</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">11</span><span class="p">,</span><span class="mi">14</span><span class="p">))</span>
+<span class="k">for</span> <span class="n">ii</span><span class="p">,</span> <span class="n">area</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">((</span><span class="s1">&#39;nh&#39;</span><span class="p">,</span> <span class="s1">&#39;sh&#39;</span><span class="p">)):</span>
+    <span class="k">for</span> <span class="n">ij</span><span class="p">,</span> <span class="n">alg</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">algos</span><span class="o">.</span><span class="n">keys</span><span class="p">()):</span>
+        <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_sic_results</span><span class="p">(</span><span class="n">sic_res</span><span class="p">[</span><span class="n">alg</span><span class="p">][</span><span class="n">area</span><span class="p">],</span> <span class="n">zoom</span><span class="o">=</span><span class="s1">&#39;zoom-&#39;</span> <span class="o">+</span> <span class="n">area</span><span class="p">,</span> <span class="n">only_sic</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="p">[</span><span class="n">axs</span><span class="p">[</span><span class="n">ij</span><span class="p">,</span><span class="n">ii</span><span class="p">],])</span>
+        <span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="n">alg</span> <span class="o">+</span> <span class="s1">&#39; (&#39;</span> <span class="o">+</span> <span class="s1">&#39;,&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">algos</span><span class="p">[</span><span class="n">alg</span><span class="p">][</span><span class="s1">&#39;channels&#39;</span><span class="p">])</span> <span class="o">+</span> <span class="s1">&#39;)&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/e6b0c3dd1c01d27936624e16788c859bcaf1df2393183e631a37ed30306edcec.png" src="../_images/e6b0c3dd1c01d27936624e16788c859bcaf1df2393183e631a37ed30306edcec.png" />
+</div>
+</div>
+<p>The results are as expected, with the <code class="docutils literal notranslate"><span class="pre">CKA</span></code> results being much coarser resolution than the <code class="docutils literal notranslate"><span class="pre">KKA</span></code> algorithm, in turn coarser resolution than the <code class="docutils literal notranslate"><span class="pre">KA</span></code> SIC. This is evident especially when looking at the details in the ice edge and along the coasts.</p>
+<p>We note that the difference of resolution between the three algorithms is expected to be much less for CIMR than for shown with AMSR2 above. For example, the K and Ka channels of CIMR should have rather similar resolution (5 km vs 4 km) while the difference is larger with AMSR2 (20 km vs 10km). The C-band channel of CIMR will have 15 km resolution while that of AMSR2 has 45 km resolution. While running the algorithms on AMSR2 TBs is a useful illustration of the their main principles, the fine tuning of the CIMR Level-2 algorithm will in the future be based on simulated CIMR data, with the expected spatial resolution.</p>
+</section>
+<section id="run-the-pan-sharpening-algorithm">
+<h2>Run the pan-sharpening algorithm<a class="headerlink" href="#run-the-pan-sharpening-algorithm" title="Link to this heading">#</a></h2>
+<p>The results above are exactly as expected from the definition of the algorithms:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">CKA</span></code> is the most accurate SIC algorithms of the three, but has the coarsest resolution because of the use of C-band.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">KKA</span></code> is less accurate but higher resolution than <code class="docutils literal notranslate"><span class="pre">CKA</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">KA</span></code> has the highest resolution, but is the least accurate of the three, by a significant margin.</p></li>
+</ul>
+<p>We can thus apply pan-sharpening algorithms combining two of the three SIC fields. Two pan-sharpened SIC fields can be relevant:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">CKA&#64;KA</span></code> : the <code class="docutils literal notranslate"><span class="pre">CKA</span></code> SICs sharpened with the details of the <code class="docutils literal notranslate"><span class="pre">KA</span></code> SICs;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">CKA&#64;KKA</span></code> : the <code class="docutils literal notranslate"><span class="pre">CKA</span></code> SICs sharpened with the details of the <code class="docutils literal notranslate"><span class="pre">KKA</span></code> SICs;</p></li>
+</ul>
+<p>The second (<code class="docutils literal notranslate"><span class="pre">CKA&#64;KKA</span></code>) will have coarser resolution than the first (<code class="docutils literal notranslate"><span class="pre">CKA&#64;KA</span></code>) but will provide more accurate SICs in conditions where the <code class="docutils literal notranslate"><span class="pre">KA</span></code> algorithm returns grossly erroneous SICs. In this version of the notebook, we only show application of <code class="docutils literal notranslate"><span class="pre">CKA&#64;KA</span></code>, which is the nominal choice.</p>
+<p>The pan-sharpening algorithm has a simple form when the <em>base</em> (LR) and <em>sharpener</em> (HR) fields are already available on the same grids:
+$<span class="math notranslate nohighlight">\(
+SIC_{ER} = SIC_{LR} + (SIC_{HR} - SIC_{HR, blurred})
+\)</span><span class="math notranslate nohighlight">\(
+where \)</span>SIC_{ER}$ is the resulting <em>Enhanced Resolution</em> SIC field.</p>
+<p>The ATBD (section <em>Enhanced-resolution SICs using pan-sharpening</em>) has a more general formula in the case of swath processing when the <em>base</em> (LR) field is not in the same location nor resolution as the <em>sharpener</em> (HR) field.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">reload</span><span class="p">(</span><span class="n">pansharpen_gridded</span><span class="p">)</span>
+<span class="n">sic_res</span><span class="p">[</span><span class="s1">&#39;CKA@KA&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">area</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">&#39;nh&#39;</span><span class="p">,</span> <span class="s1">&#39;sh&#39;</span><span class="p">):</span> 
+    
+    <span class="c1"># Get the grid spacing (km) of the SIC field</span>
+    <span class="n">xc</span> <span class="o">=</span> <span class="n">ds</span><span class="p">[</span><span class="n">area</span><span class="p">][</span><span class="s1">&#39;xc&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+    <span class="n">xres</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="n">xc</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">xc</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+    
+    <span class="c1"># call the pansharpening module (for gridded SIC fields)</span>
+    <span class="n">sic_lr</span> <span class="o">=</span> <span class="n">sic_res</span><span class="p">[</span><span class="s1">&#39;CKA&#39;</span><span class="p">][</span><span class="n">area</span><span class="p">]</span><span class="o">.</span><span class="n">sic</span>
+    <span class="n">sic_hr</span> <span class="o">=</span> <span class="n">sic_res</span><span class="p">[</span><span class="s1">&#39;KA&#39;</span><span class="p">][</span><span class="n">area</span><span class="p">]</span><span class="o">.</span><span class="n">sic</span>
+    <span class="n">sic_er</span><span class="p">,</span> <span class="n">sic_hr_blurred</span> <span class="o">=</span> <span class="n">pansharpen_gridded</span><span class="o">.</span><span class="n">blend_c</span><span class="p">(</span><span class="n">sic_lr</span><span class="p">,</span> <span class="n">sic_hr</span><span class="p">,</span> <span class="s1">&#39;amsr&#39;</span><span class="p">,</span> <span class="n">xres</span><span class="p">)</span>
+
+    <span class="c1"># handle uncertainties and flags.</span>
+    <span class="c1"># at this time, the uncertainty and OWF of the enhanced resolution fields</span>
+    <span class="c1">#   are directly those of the low-resolution field.</span>
+    <span class="n">owf_er</span> <span class="o">=</span> <span class="n">sic_res</span><span class="p">[</span><span class="s1">&#39;CKA&#39;</span><span class="p">][</span><span class="n">area</span><span class="p">]</span><span class="o">.</span><span class="n">owf</span>
+    <span class="n">sdev_er</span> <span class="o">=</span> <span class="n">sic_res</span><span class="p">[</span><span class="s1">&#39;CKA&#39;</span><span class="p">][</span><span class="n">area</span><span class="p">]</span><span class="o">.</span><span class="n">sdev</span>
+    <span class="n">dal_er</span> <span class="o">=</span> <span class="n">sic_res</span><span class="p">[</span><span class="s1">&#39;CKA&#39;</span><span class="p">][</span><span class="n">area</span><span class="p">]</span><span class="o">.</span><span class="n">dal</span>
+    
+    <span class="c1"># store the resulting SIC in a result object</span>
+    <span class="n">sic_res</span><span class="p">[</span><span class="s1">&#39;CKA@KA&#39;</span><span class="p">][</span><span class="n">area</span><span class="p">]</span> <span class="o">=</span> <span class="n">single_algo</span><span class="o">.</span><span class="n">SICAlgoResult</span><span class="p">(</span><span class="n">sic_er</span><span class="p">,</span> <span class="n">sdev_er</span><span class="p">,</span> <span class="n">owf_er</span><span class="p">,</span> <span class="n">dal_er</span><span class="p">,</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Plot the SIC fields (LR, HR, and ER)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">area</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">&#39;nh&#39;</span><span class="p">,</span> <span class="s1">&#39;sh&#39;</span><span class="p">):</span>
+    
+    <span class="n">fig</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">ncols</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">14</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+    <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_sic_results</span><span class="p">(</span><span class="n">sic_res</span><span class="p">[</span><span class="s1">&#39;CKA&#39;</span><span class="p">][</span><span class="n">area</span><span class="p">],</span> <span class="n">zoom</span><span class="o">=</span><span class="s1">&#39;zoom-&#39;</span> <span class="o">+</span> <span class="n">area</span><span class="p">,</span> <span class="n">only_sic</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="p">[</span><span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">],])</span>
+    <span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;CKA&#39;</span> <span class="o">+</span> <span class="s1">&#39; (&#39;</span> <span class="o">+</span> <span class="s1">&#39;,&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">algos</span><span class="p">[</span><span class="s1">&#39;CKA&#39;</span><span class="p">][</span><span class="s1">&#39;channels&#39;</span><span class="p">])</span> <span class="o">+</span> <span class="s1">&#39;)&#39;</span><span class="p">)</span>
+    <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_sic_results</span><span class="p">(</span><span class="n">sic_res</span><span class="p">[</span><span class="s1">&#39;KA&#39;</span><span class="p">][</span><span class="n">area</span><span class="p">],</span> <span class="n">zoom</span><span class="o">=</span><span class="s1">&#39;zoom-&#39;</span> <span class="o">+</span> <span class="n">area</span><span class="p">,</span> <span class="n">only_sic</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="p">[</span><span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">],])</span>
+    <span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;KA&#39;</span> <span class="o">+</span> <span class="s1">&#39; (&#39;</span> <span class="o">+</span> <span class="s1">&#39;,&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">algos</span><span class="p">[</span><span class="s1">&#39;KA&#39;</span><span class="p">][</span><span class="s1">&#39;channels&#39;</span><span class="p">])</span> <span class="o">+</span> <span class="s1">&#39;)&#39;</span><span class="p">)</span>
+    <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_sic_results</span><span class="p">(</span><span class="n">sic_res</span><span class="p">[</span><span class="s1">&#39;CKA@KA&#39;</span><span class="p">][</span><span class="n">area</span><span class="p">],</span> <span class="n">zoom</span><span class="o">=</span><span class="s1">&#39;zoom-&#39;</span> <span class="o">+</span> <span class="n">area</span><span class="p">,</span> <span class="n">only_sic</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="p">[</span><span class="n">axs</span><span class="p">[</span><span class="mi">2</span><span class="p">],])</span>
+    <span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Enhanced Resolution CKA@KA&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+    
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/10422f202fff3f6ed0c897894549c1941504efdf79af9785309562a580902d3f.png" src="../_images/10422f202fff3f6ed0c897894549c1941504efdf79af9785309562a580902d3f.png" />
+<img alt="../_images/da8f5ca84aad4e68a31315422245b6e76f73328e85ca20492a417a63d091bccc.png" src="../_images/da8f5ca84aad4e68a31315422245b6e76f73328e85ca20492a417a63d091bccc.png" />
+</div>
+</div>
+<p>The illustration above demonstrate the effect of the pan-sharpening algorithm: the resulting <em>Enhanced Resolution</em> SIC field (right) presents finer details than the <em>Low Resolution</em> field (left), but not all the noise visible in the <em>High Resolution</em> field (middle). The pan-sharpening effectively enhanced the resolution of the <em>LR</em> field without introducing (all of) the noise from the <em>HR</em> field.</p>
+<p>An attentive reader will notice that the <em>Enhanced Resolution</em> SIC field presents degraded SICs along the coastlines (with respect to the <em>HR</em> field). The pan-sharpening algorithm is indeed mostly work away from the coasts, where the computation of <span class="math notranslate nohighlight">\(SIC_{HR,blurred}\)</span> is effective. Improving SICs in the coastal region will mainly come from:</p>
+<ol class="arabic simple">
+<li><p>using TBs corrected from the contamination of land emissivities (this is step in the L1B/L2 Bridge);</p></li>
+<li><p>improve the pan-sharpening algorithm in the vicinity of land and coastlines (future R&amp;D).</p></li>
+</ol>
+</section>
+<section id="run-the-sea-ice-edge-algorithm">
+<h2>Run the Sea Ice Edge algorithm<a class="headerlink" href="#run-the-sea-ice-edge-algorithm" title="Link to this heading">#</a></h2>
+<p>The Sea Ice Edge (SIED) product is obtained from the <em>Enhanced Resolution</em> SIC field by a simple thresholding (typically at 15% SIC). The computation of the SIED field is demonstrated below.</p>
+<p>Note that the propagation of SIC uncertainties into the SIED field is future R&amp;D. The routine below will later return both the SIED field and the uncertainty (a probability).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># the SIED algorithm is so simple that we implement it directly in the JNB. We will later move it to python module files.</span>
+<span class="k">def</span> <span class="nf">compute_sied</span><span class="p">(</span><span class="n">sic</span><span class="p">,</span> <span class="n">owf</span><span class="p">,</span> <span class="n">sdev</span><span class="p">,</span> <span class="n">threshold</span><span class="o">=</span><span class="mf">15.</span><span class="p">):</span>
+    <span class="n">sic</span><span class="p">[</span><span class="n">owf</span><span class="o">==</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">sied</span> <span class="o">=</span> <span class="p">(</span><span class="n">sic</span><span class="o">&gt;=</span><span class="n">threshold</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;short&#39;</span><span class="p">)</span>
+    <span class="n">sied</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ma</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">sied</span><span class="p">,</span> <span class="n">mask</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">sic</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">sied</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sied</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">area</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">&#39;nh&#39;</span><span class="p">,</span> <span class="s1">&#39;sh&#39;</span><span class="p">):</span>
+    <span class="n">sied</span><span class="p">[</span><span class="n">area</span><span class="p">]</span> <span class="o">=</span> <span class="n">compute_sied</span><span class="p">(</span><span class="n">sic_res</span><span class="p">[</span><span class="s1">&#39;CKA@KA&#39;</span><span class="p">][</span><span class="n">area</span><span class="p">]</span><span class="o">.</span><span class="n">sic</span><span class="p">,</span> <span class="n">sic_res</span><span class="p">[</span><span class="s1">&#39;CKA@KA&#39;</span><span class="p">][</span><span class="n">area</span><span class="p">]</span><span class="o">.</span><span class="n">owf</span><span class="p">,</span> <span class="n">sic_res</span><span class="p">[</span><span class="s1">&#39;CKA@KA&#39;</span><span class="p">][</span><span class="n">area</span><span class="p">]</span><span class="o">.</span><span class="n">sdev</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Visualize the SIED fields</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">ncols</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">13</span><span class="p">,</span><span class="mi">6</span><span class="p">),</span> <span class="n">sharex</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">sharey</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">ia</span><span class="p">,</span> <span class="n">area</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">((</span><span class="s1">&#39;nh&#39;</span><span class="p">,</span> <span class="s1">&#39;sh&#39;</span><span class="p">)):</span>
+    <span class="n">cmap</span> <span class="o">=</span> <span class="n">copy</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">cmocean</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">ice</span><span class="p">);</span> <span class="n">cmap</span><span class="o">.</span><span class="n">set_bad</span><span class="p">(</span><span class="s1">&#39;gray&#39;</span><span class="p">)</span>
+    <span class="n">c</span> <span class="o">=</span> <span class="n">ax</span><span class="p">[</span><span class="n">ia</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">sied</span><span class="p">[</span><span class="n">area</span><span class="p">],</span> <span class="n">interpolation</span><span class="o">=</span><span class="s1">&#39;none&#39;</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">cmap</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">ax</span><span class="p">[</span><span class="n">ia</span><span class="p">]</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">([]);</span> <span class="n">ax</span><span class="p">[</span><span class="n">ia</span><span class="p">]</span><span class="o">.</span><span class="n">set_yticks</span><span class="p">([])</span>
+    <span class="n">cbar</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">[</span><span class="n">ia</span><span class="p">],</span> <span class="n">orientation</span><span class="o">=</span><span class="s1">&#39;vertical&#39;</span><span class="p">,</span> <span class="n">shrink</span><span class="o">=</span><span class="mf">0.75</span><span class="p">)</span>
+    <span class="n">cbar</span><span class="o">.</span><span class="n">set_label</span><span class="p">(</span><span class="s1">&#39;Sea Ice Edge&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/2f73d2b6511bfd2cc063fa595488d4491ce224b7ee54f724668b9fa2b7e6fb0e.png" src="../_images/2f73d2b6511bfd2cc063fa595488d4491ce224b7ee54f724668b9fa2b7e6fb0e.png" />
+</div>
+</div>
+<p>The maps above illustrate how the L2 SIED will be derived from L2 SIC. The SIED product can become an effective ice/no-ice mask for other L2 variables (within or outside the L2 GPP).</p>
+<p>The reader will notice sea ice detected along many coastlines. This is a direct effect from the L2 SIC being overestimated along the coastlines. As discussed for SIC, this overestimation will be addressed by using land-corrected <em>L2PP</em> TBs as prepared in the L1B/L2 Bridge, and by applying maximum sea-ice extent masks (based on climatologies). The reader will also notice small pixels of sea ice detected in the open ocean and lower latitudes. These are residuals from atmospheric contamination and will be addressed both by using TB corrected for the atmospheric noise (as prepared in the L1B/L2 Bridge) and applying maximum sea-ice extent masks (based on climatologies). All these aspects will be developed in future versions of the ATBD.</p>
+</section>
+<section id="lake-ice-cover-over-the-great-lakes">
+<h2>Lake Ice Cover over the Great Lakes<a class="headerlink" href="#lake-ice-cover-over-the-great-lakes" title="Link to this heading">#</a></h2>
+<p>JAXA AMSR2, even at K and Ka bands, has a coarse spatial resolution for monitoring Lake Ice Cover (LIC). Only the largest lakes like the Great Lakes and Caspian Sea are to some extent exploitable for fractional LIC, while smaller lakes present a high degree of land spill-over contamination.</p>
+<p>Below, we visualize the results of the <code class="docutils literal notranslate"><span class="pre">KKa</span></code> algorithm above (thus tuned for Arctic sea ice) over the Great Lakes, and compare the result to the manual lake ice analysis performed by the U.S. National Ice Center (NIC). The NIC chart was accessed from <a class="reference external" href="https://usicecenter.gov/Products/GreatLakesCharts">here</a>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sic_crs</span> <span class="o">=</span> <span class="n">adef</span><span class="p">[</span><span class="s1">&#39;nh&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">to_cartopy_crs</span><span class="p">()</span>
+<span class="n">ccrs_great_lakes</span> <span class="o">=</span> <span class="n">ccrs</span><span class="o">.</span><span class="n">LambertConformal</span><span class="p">(</span><span class="n">central_longitude</span><span class="o">=-</span><span class="mi">84</span><span class="p">,</span> <span class="n">central_latitude</span><span class="o">=</span><span class="mi">45</span><span class="p">,</span> <span class="n">standard_parallels</span><span class="o">=</span><span class="p">(</span><span class="mi">49</span><span class="p">,</span> <span class="mi">77</span><span class="p">))</span>
+
+<span class="c1"># SIC from KKA algorithm, with open water filter (OWF)</span>
+<span class="n">sic</span> <span class="o">=</span> <span class="n">sic_res</span><span class="p">[</span><span class="s1">&#39;KKA&#39;</span><span class="p">][</span><span class="s1">&#39;nh&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sic</span>
+<span class="n">sic</span><span class="p">[</span><span class="n">sic_res</span><span class="p">[</span><span class="s1">&#39;KKA&#39;</span><span class="p">][</span><span class="s1">&#39;nh&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">owf</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="c1"># Reference Lake Ice Cover from US National Ice Center (as png)</span>
+<span class="n">im</span> <span class="o">=</span> <span class="n">img</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="s1">&#39;../atbd/static_imgs/great_lake_seaice_20200331.png&#39;</span><span class="p">)</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">nrows</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">subplot_kw</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">projection</span><span class="o">=</span><span class="n">ccrs_great_lakes</span><span class="p">),</span>
+                       <span class="n">layout</span><span class="o">=</span><span class="s1">&#39;constrained&#39;</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span><span class="mi">15</span><span class="p">))</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">stock_img</span><span class="p">()</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">add_feature</span><span class="p">(</span><span class="n">cfeature</span><span class="o">.</span><span class="n">COASTLINE</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">add_feature</span><span class="p">(</span><span class="n">cfeature</span><span class="o">.</span><span class="n">LAKES</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">gridlines</span><span class="p">()</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mf">0.01</span><span class="p">,</span><span class="mf">0.01</span><span class="p">,</span><span class="s1">&#39;Data: AMSR2</span><span class="se">\n</span><span class="s1">Algo: KKA</span><span class="se">\n</span><span class="s1">31 MAR 2020&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">va</span><span class="o">=</span><span class="s1">&#39;bottom&#39;</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;left&#39;</span><span class="p">,</span> <span class="n">transform</span><span class="o">=</span><span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">transAxes</span><span class="p">)</span>
+
+<span class="n">ext</span> <span class="o">=</span> <span class="o">-</span><span class="mi">600000</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="o">-</span><span class="mi">700000</span><span class="p">,</span> <span class="mi">700000</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="o">-</span><span class="mi">500000</span><span class="p">,</span> <span class="mi">500000</span><span class="p">)</span>
+
+<span class="n">cmap</span> <span class="o">=</span> <span class="n">copy</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">cmocean</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">ice</span><span class="p">);</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">sic</span><span class="p">,</span> <span class="n">transform</span><span class="o">=</span><span class="n">sic_crs</span><span class="p">,</span> <span class="n">extent</span><span class="o">=</span><span class="n">sic_crs</span><span class="o">.</span><span class="n">bounds</span><span class="p">,</span> <span class="n">origin</span><span class="o">=</span><span class="s1">&#39;upper&#39;</span><span class="p">,</span>
+          <span class="n">cmap</span><span class="o">=</span><span class="n">cmap</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="p">)</span>
+
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">im</span><span class="p">,</span> <span class="n">interpolation</span><span class="o">=</span><span class="s1">&#39;none&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/85f385c076971fa26604710bfcdb0f07b135100057b6bb511096583a4830552b.png" src="../_images/85f385c076971fa26604710bfcdb0f07b135100057b6bb511096583a4830552b.png" />
+</div>
+</div>
+<p>It is apparent from the manual analysis that the Great Lakes were mostly ice free at this date, with partial sea ice cover only along the shore.</p>
+<p>The SIC field returned by the <code class="docutils literal notranslate"><span class="pre">KKa</span></code> algorithm also results in mostly ice free lakes, but fringes of non-zero ice are found along the coasts. This is a direct effect of land spill-over effects, which is prominent at the resolution of the AMSR2 channels. It is encouraging that the <code class="docutils literal notranslate"><span class="pre">KKa</span></code> algorithm seems to return more lake ice in the center of the map, to the East of Sault Ste Marie, but the water inlet is surrounded by land and the <code class="docutils literal notranslate"><span class="pre">KKa</span></code> results might pick this increased land fraction rather than increased ice cover.</p>
+<p>This initial qualitative assessment confirms that land spill-over correction, which will be implemented in the L2 GPP as part of the L1B/L2 Bridge processing is critical for the retrieval of Lake Ice Cover.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./notebooks"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../annex.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Annex</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="DD-JNB%20Sea%20Ice%20Concentration%20and%20Edge%20on%20SCEPS%20Polar%20Scene.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Sea Ice Concentration and Edge demonstrated on the SCEPS Polar Scene</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#locate-di-tds-jnb">Locate DI-TDS-JNB</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#define-the-sic-algorithms">Define the SIC algorithms</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#offline-preparation-tune-the-sic-algorithms">Offline preparation : tune the SIC algorithms</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#run-the-cka-kka-and-ka-sic-algorithms-on-the-tb-maps">Run the <code class="docutils literal notranslate"><span class="pre">CKA</span></code>, <code class="docutils literal notranslate"><span class="pre">KKA</span></code>, and <code class="docutils literal notranslate"><span class="pre">KA</span></code> SIC algorithms on the TB maps</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#run-the-pan-sharpening-algorithm">Run the pan-sharpening algorithm</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#run-the-sea-ice-edge-algorithm">Run the Sea Ice Edge algorithm</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lake-ice-cover-over-the-great-lakes">Lake Ice Cover over the Great Lakes</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Thomas Lavergne, Norwegian Meteorological Institute
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+<div class="extra_footer">
+  <p>
+This ATBD was developed in the context of the ESA-funded CIMR L2PAD project (2023-2027) (ESA 4000143081/23/I-NS).
+</p>
+
+</div>
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

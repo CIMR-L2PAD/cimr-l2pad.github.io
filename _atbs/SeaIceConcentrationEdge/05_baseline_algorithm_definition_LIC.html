@@ -1,0 +1,562 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Baseline Algorithm Definition for LIC &#8212; CIMR L2 SIC, SIED, and LIC ATBD</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="_static/styles.css?v=df429b37" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '05_baseline_algorithm_definition_LIC';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Baseline Algorithm Definition for SIE" href="05_baseline_algorithm_definition_SIE.html" />
+    <link rel="prev" title="Baseline Algorithm Definition for SIED" href="05_baseline_algorithm_definition_SIED.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+
+  <div class="bd-header-announcement container-fluid bd-header-announcement">
+    <div class="bd-header-announcement__content">This is V2D of the ATBD, prepared for TC#2 (May 2025)</div>
+  </div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.jpg" class="logo__image only-light" alt="CIMR L2 SIC, SIED, and LIC ATBD - Home"/>
+    <script>document.write(`<img src="_static/logo.jpg" class="logo__image only-dark" alt="CIMR L2 SIC, SIED, and LIC ATBD - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    CIMR L2 SIC, SIED, SIC1H, SIED1H and LIC ATBD
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="00_abstract.html">Abstract</a></li>
+<li class="toctree-l1"><a class="reference internal" href="01_applicable_ref_docs.html">Applicable and reference documents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02_acronyms_and_definitions.html">Acronyms and definitions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03_introduction_purpose_scope.html">Introduction, purpose and scope</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04_background_justification_algorithm.html">Background and justification of selected algorithm</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05_baseline_algorithm_definition_SIC.html">Baseline Algorithm Definition for SIC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05_baseline_algorithm_definition_SIED.html">Baseline Algorithm Definition for SIED</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Baseline Algorithm Definition for LIC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05_baseline_algorithm_definition_SIE.html">Baseline Algorithm Definition for SIE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06_input_output_data_definition_SIC-SIED.html">Algorithm Input and Output Data Definition (IODD) for SIC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06_input_output_data_definition_LIC.html">Algorithm Input and Output Data Definition (IODD) for LIC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="references.html">References</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="annex.html">Annex</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/DD-JNB%20Sea%20Ice%20Concentration%20Edge%20and%20Lake%20Ice%20Cover%20AMSR2.html">Sea Ice Concentration Algorithm Demonstration on AMSR2 data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/DD-JNB%20Sea%20Ice%20Concentration%20and%20Edge%20on%20SCEPS%20Polar%20Scene.html">Sea Ice Concentration Algorithm Demonstration on SCEPS Polar Scene</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/DD-JNB%20Sea%20Ice%20Concentration%20and%20Edge%20on%20SCEPS%20Polar%20Scene%20Performance%20Assessement.html">Sea Ice Concentration Algorithm Demonstration on SCEPS Polar Scene (Performance Assessment)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/DD-JNB%20Sea%20Ice%20Extent%20and%20Area.html">Sea Ice Extent and Area</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/DD-JNB%20Sea%20Ice%20Concentration%20Offline%20Preparation.html">Dynamic tuning of the SIC algorithm (OFFLINE chain)</a></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/CIMR-L2PAD/SeaIceConcentrationEdge_ATBD" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Source repository"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/05_baseline_algorithm_definition_LIC.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Baseline Algorithm Definition for LIC</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#retrieval-method">Retrieval Method</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#use-of-k-and-ka-channels">Use of K and Ka channels</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fixed-lake-tie-points">Fixed lake tie-points</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cimr-level-1b-re-sampling-approach">CIMR Level-1b re-sampling approach</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#algorithm-assumptions-and-simplifications">Algorithm Assumptions and Simplifications</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="baseline-algorithm-definition-for-lic">
+<span id="lic-baseline"></span><h1>Baseline Algorithm Definition for LIC<a class="headerlink" href="#baseline-algorithm-definition-for-lic" title="Link to this heading">#</a></h1>
+<p>This chapter describes the algorithm baseline for the Lake Ice Cover (LIC) fields.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>A <a class="reference internal" href="notebooks/DD-JNB%20Sea%20Ice%20Concentration%20Edge%20and%20Lake%20Ice%20Cover%20AMSR2.html"><span class="std std-doc">notebook to demonstrate the LIC retrieval over the Great Lakes from daily averaged AMSR2 TBs</span></a> is in annex to this ATBD (at the bottom of the notebook).</p>
+<p>Readers are invited to browse the notebook in complement to the algorithm description below.</p>
+</div>
+<section id="retrieval-method">
+<h2>Retrieval Method<a class="headerlink" href="#retrieval-method" title="Link to this heading">#</a></h2>
+<p>We retrieve <a class="reference internal" href="02_acronyms_and_definitions.html#term-LIC"><span class="xref std std-term">LIC</span></a> as a scalar between 0 and 1 (or 0% and 100%) using the <a class="reference internal" href="05_baseline_algorithm_definition_SIC.html#sic-baseline"><span class="std std-ref">Baseline Algorithm Definition for SIC</span></a>, but with small adjustments,
+that are listed below.</p>
+<section id="use-of-k-and-ka-channels">
+<h3>Use of K and Ka channels<a class="headerlink" href="#use-of-k-and-ka-channels" title="Link to this heading">#</a></h3>
+<p>To achieve LIC product with a resolution better than 5 km, we cannot use C-band and thus the <code class="docutils literal notranslate"><span class="pre">CKa</span></code> algorithm. Instead,
+we will use the <code class="docutils literal notranslate"><span class="pre">KKa</span></code>, possibly pan-sharpened with the <code class="docutils literal notranslate"><span class="pre">Ka</span></code> algorithm. We note that <span id="id1">[<a class="reference internal" href="references.html#id9" title="J. Du, J. S. Kimball, C. Duguay, Y. Kim, and J. D. Watts. Satellite microwave assessment of northern hemisphere lake ice phenology from 2002 to 2015. The Cryosphere, 11(1):47–63, 2017. URL: https://tc.copernicus.org/articles/11/47/2017/, doi:10.5194/tc-11-47-2017.">Du <em>et al.</em>, 2017</a>]</span> uses
+only the 36.5GHz H-polarization channel of AMSR-E and AMSR2 to retrieve lake ice phenology, arguing that H-pol is
+more sensitive to lake freeze-up/break-up signals <span id="id2">[<a class="reference internal" href="references.html#id11" title="K.-K. Kang, C. R. Duguay, and S. E. L. Howell. Estimating ice phenology on large northern lakes from amsr-e: algorithm development and application to great bear lake and great slave lake, canada. The Cryosphere, 6(2):235–254, 2012. URL: https://tc.copernicus.org/articles/6/235/2012/, doi:10.5194/tc-6-235-2012.">Kang <em>et al.</em>, 2012</a>]</span>.</p>
+</section>
+<section id="fixed-lake-tie-points">
+<h3>Fixed lake tie-points<a class="headerlink" href="#fixed-lake-tie-points" title="Link to this heading">#</a></h3>
+<p>Lake ice is different from sea ice: it is less saline, usually thinner, and accumulates less snow
+on its surface. Lake ice is also seasonal (it melts fully during summer) and there are thus no multiyear ice in lakes.
+This calls for a different set of algorithm tie-points for lake ice than for sea ice. The method to derive such fixed
+lake ice tie-points is still open at time of writing, noting the work of <span id="id3">[<a class="reference internal" href="references.html#id14" title="Peygham Ghaffari, Leif Pedersen, Steinar Eastwood, and Thomas Lavergne. Sea ice in the Caspian Sea. Technical Report OSI_AS11_P04, EUMETSAT Ocean and Sea Ice Satellite Application Facillity, 09 2011. doi:10.13140/RG.2.2.13352.90887.">Ghaffari <em>et al.</em>, 2011</a>]</span>.</p>
+</section>
+</section>
+<section id="cimr-level-1b-re-sampling-approach">
+<h2>CIMR Level-1b re-sampling approach<a class="headerlink" href="#cimr-level-1b-re-sampling-approach" title="Link to this heading">#</a></h2>
+<p>There are no additional requirements on Level-1b for LIC than for SIC.</p>
+<p>We nonetheless underline the importance of the land spill-over correction step
+(implemented as part of the L1B/L2 Bridge <a class="reference internal" href="01_applicable_ref_docs.html"><span class="doc">[RD-2]</span></a>) as it is
+critical to the accuracy of lake ice information in smaller lakes.</p>
+<p>We also note that, being on land, lakes will naturally be closer to Radio-Frequency Interference (RFI)
+sources, and that its detection and mitigation in the L1B processing will be important.</p>
+</section>
+<section id="algorithm-assumptions-and-simplifications">
+<h2>Algorithm Assumptions and Simplifications<a class="headerlink" href="#algorithm-assumptions-and-simplifications" title="Link to this heading">#</a></h2>
+<p>Microwave emission does not originate from the snow surface, but rather from layers within the ice and snow. For thin
+ice (&lt; 20 cm), algorithms based on microwave radiometry tend to underestimate ice fraction. The underestimation is
+less at K and Ka band than at L or C bands.</p>
+<p>Despite the fact that lake ice is seasonal and does not generally deform, the brightness temperature of fully-iced lakes
+(that defines the 100% LIC tie-point) can vary in time especially due to variations in temperature (incl. a diurnal cycle)
+and because of melt/freeze processes in the snow layer on top of the ice (wet ice has a higher emissivity than dry ice).
+We will start the developments of the LIC algorithm aiming at a fixed ice tie-point, but further refinement could aim
+at time-varying tie-points, like in the SIC algorithm. We note the work of <span id="id4">[<a class="reference internal" href="references.html#id9" title="J. Du, J. S. Kimball, C. Duguay, Y. Kim, and J. D. Watts. Satellite microwave assessment of northern hemisphere lake ice phenology from 2002 to 2015. The Cryosphere, 11(1):47–63, 2017. URL: https://tc.copernicus.org/articles/11/47/2017/, doi:10.5194/tc-11-47-2017.">Du <em>et al.</em>, 2017</a>]</span> who discusses
+the time-variation of AMSR-E and AMSR2 TBs (at 36.5 GHz H-pol) of fully-iced lakes.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="05_baseline_algorithm_definition_SIED.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Baseline Algorithm Definition for SIED</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="05_baseline_algorithm_definition_SIE.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Baseline Algorithm Definition for SIE</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#retrieval-method">Retrieval Method</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#use-of-k-and-ka-channels">Use of K and Ka channels</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fixed-lake-tie-points">Fixed lake tie-points</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cimr-level-1b-re-sampling-approach">CIMR Level-1b re-sampling approach</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#algorithm-assumptions-and-simplifications">Algorithm Assumptions and Simplifications</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Thomas Lavergne, Norwegian Meteorological Institute
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+<div class="extra_footer">
+  <p>
+This ATBD was developed in the context of the ESA-funded CIMR L2PAD project (2023-2027) (ESA 4000143081/23/I-NS).
+</p>
+
+</div>
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
