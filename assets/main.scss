@@ -87,8 +87,12 @@ h3 {
   align-items: center;
 }
 
-.site-nav .menu-icon svg {
+.site-nav .menu-icon {
   display: block !important; /* Ensure the menu icon is always visible */
+  z-index: 1000;
+}
+
+.site-nav .menu-icon svg {
   width: 20px;
   height: auto;
   fill: var(--hf-font-color);
