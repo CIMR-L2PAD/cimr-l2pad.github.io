@@ -88,10 +88,11 @@ h3 {
 }
 
 .site-nav .menu-icon svg {
-  width: 16px;  /* smaller burger icon */
+  width: 20px;
   height: auto;
   fill: var(--hf-font-color);
   stroke: var(--hf-background-color);
+  stroke-width: 3;
 }
 
 .site-nav .page-link {
@@ -218,6 +219,7 @@ h3 {
   }
   .site-nav .menu-icon svg {
     width: 14px;
+    stroke-width: 2;
   }
 }
 
