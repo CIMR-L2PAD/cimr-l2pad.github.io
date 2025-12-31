@@ -90,6 +90,8 @@ h3 {
 .site-nav .menu-icon svg {
   width: 16px;  /* smaller burger icon */
   height: auto;
+  fill: var(--hf-font-color);
+  stroke: var(--hf-background-color);
 }
 
 .site-nav .page-link {
