@@ -88,6 +88,7 @@ h3 {
 }
 
 .site-nav .menu-icon svg {
+  display: block !important; /* Ensure the menu icon is always visible */
   width: 20px;
   height: auto;
   fill: var(--hf-font-color);
@@ -96,7 +97,17 @@ h3 {
 }
 
 .site-nav .page-link {
+  display: none !important; /* Prevent full links from being displayed in the header (we want the */
   color: var(--hf-font-color);
+}
+
+.trigger {
+  display: none;
+}
+
+/* Show the menu content when the checkbox is checked (toggle behavior) */
+.nav-trigger:checked ~ .trigger {
+  display: block;
 }
 
 .site-title {
