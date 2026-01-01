@@ -87,11 +87,6 @@ h3 {
   align-items: center;
 }
 
-.site-nav .menu-icon {
-  display: block !important; /* Ensure the menu icon is always visible */
-  z-index: 1000;
-}
-
 .site-nav .menu-icon svg {
   width: 20px;
   height: auto;
@@ -101,17 +96,7 @@ h3 {
 }
 
 .site-nav .page-link {
-  display: none !important; /* Prevent full links from being displayed in the header (we want the */
   color: var(--hf-font-color);
-}
-
-.trigger {
-  display: none;
-}
-
-/* Show the menu content when the checkbox is checked (toggle behavior) */
-.nav-trigger:checked ~ .trigger {
-  display: block;
 }
 
 .site-title {
