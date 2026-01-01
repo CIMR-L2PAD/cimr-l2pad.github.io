@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Level-2&nbsp;products
+title: Level-2 products
 permalink: /l2products/
 ---
 
