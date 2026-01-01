@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "About CIMR L2PAD"
+title: "About"
 permalink: /
 ---
 
