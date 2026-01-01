@@ -56,6 +56,10 @@ table {
   color:var(--font-color);
   background-color:var(--background-color);
 }
+table tr:nth-child(even) {
+  color:#ffff00
+  background-color:#ff69b4
+}
 
 /* HEADER LAYOUT: logo + menu aligned left */
 .site-header .wrapper {
