@@ -57,12 +57,12 @@ table {
   background-color:var(--background-color);
 }
 table tr:nth-child(even) {
-  color:#ffff00;
-  background-color:#ff69b4;
+  color:var(--background-color);
+  background-color:var(--font-color);
 }
 table th {
-  color:#00bb00;
-  background-color:#ffaab4;
+  color:var(--font-color);
+  background-color:var(--background-color);
 }
 
 /* HEADER LAYOUT: logo + menu aligned left */
