@@ -60,6 +60,10 @@ table tr:nth-child(even) {
   color:#ffff00;
   background-color:#ff69b4;
 }
+table th {
+  color:#00ff00;
+  background-color:#b4ff69;
+}
 
 /* HEADER LAYOUT: logo + menu aligned left */
 .site-header .wrapper {
