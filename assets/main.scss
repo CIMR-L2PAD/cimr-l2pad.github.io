@@ -52,14 +52,19 @@ h3 {
 }
 
 /* TABLE (row colors alternate). no need to adjust for light/dark mode. */
-table, thead {
+table {
   color:var(--font-color);
   background-color:var(--background-color);
 }
 
-tbody tr:nth-child(even) {
+tr:nth-child(even) {
   color:var(--background-color);
   background-color:var(--font-color);
+}
+
+th {
+  color:var(--font-color);
+  background-color:var(--background-color);
 }
 
 /* HEADER LAYOUT: logo + menu aligned left */
