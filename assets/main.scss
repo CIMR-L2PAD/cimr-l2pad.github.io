@@ -52,12 +52,12 @@ h3 {
 }
 
 /* TABLE (row colors alternate). no need to adjust for light/dark mode. */
-table, table th {
+table, thead {
   color:var(--font-color);
   background-color:var(--background-color);
 }
 
-table tr:nth-child(even) {
+tbody tr:nth-child(even) {
   color:var(--background-color);
   background-color:var(--font-color);
 }
