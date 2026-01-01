@@ -57,12 +57,12 @@ table {
   background-color:var(--background-color);
 }
 
-table tr:nth-child(even) {
+tr:nth-child(even) {
   color:var(--background-color);
   background-color:var(--font-color);
 }
 
-table th {
+th {
   color:var(--font-color);
   background-color:var(--background-color);
 }
