@@ -19,9 +19,9 @@ Depending on the Level-2 product, different delivery timeliness are specified:
 * *Non-Time-Critical (NTC)*: Product delivered in less than 30 days to the point of user pickup after data acquisition by
    the satellite.
 
-`MRD-XXXX` refers to the requirement number in the [CIMR Mission Requirement Document v5](https://esamultimedia.esa.int/docs/EarthObservation/CIMR-MRD-v5.0-20230211_(Issued).pdf).
+MRD&#8209;XXXX refers to the requirement number in the [CIMR Mission Requirement Document v5](https://esamultimedia.esa.int/docs/EarthObservation/CIMR-MRD-v5.0-20230211_(Issued).pdf).
 
-| L2 Variable ID | Description | Coverage Domain | Delivery Timeliness | MRD-XXXX |
+| L2 Variable ID | Description | Coverage Domain | Delivery Timeliness | MRD&#8209;XXXX |
 | ---            | ---         | ---             | ---                 | ---      |
 | SIC-P | Sea Ice Concentration | Polar Regions and Adjacent Seas | NRT1H/NRT3H/NTC | MRD&#8209;890, MRD&#8209;1110 |
 | SIT-P | Thin Sea Ice Thickness | Polar Regions and Adjacent Seas | NRT3H/NTC | MRD&#8209;910 |
