@@ -52,6 +52,9 @@ h3 {
 }
 
 /* TABLE (row colors alternate). no need to adjust for light/dark mode. */
+table td {
+  border: unset; /* Removes the border applied to <td> */
+}
 table {
   color:var(--font-color);
   background-color:var(--background-color);
