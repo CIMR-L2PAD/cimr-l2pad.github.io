@@ -55,15 +55,17 @@ h3 {
 table {
   color:var(--font-color);
   background-color:var(--background-color);
-  border:1px solid #7f7f7f
+  border:1px solid var(--font-color);
 }
 table tr:nth-child(even) {
   color:var(--background-color);
   background-color:var(--font-color);
+  border:1px solid var(--background-color);
 }
 table th {
   color:var(--font-color);
   background-color:var(--background-color);
+  border:1px solid var(--font-color);
 }
 
 /* HEADER LAYOUT: logo + menu aligned left */
