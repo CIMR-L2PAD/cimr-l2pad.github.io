@@ -23,7 +23,7 @@ MRD&#8209;XXXX refers to the requirement number in the [CIMR Mission Requirement
 
 | L2 Variable ID | Description | Coverage Domain | Delivery Timeliness | MRD&#8209;XXXX | ATBD | 
 | ---            | ---         | ---             | ---                 | ---      | --- | 
-| SIC-P | Sea Ice Concentration | Polar Regions and Adjacent Seas | NRT1H/NRT3H/NTC | MRD&#8209;890, MRD&#8209;1110 | [ATBD](../_atbds/SeaIceConcentrationEdge/index.html) |
+| SIC-P | Sea Ice Concentration | Polar Regions and Adjacent Seas | NRT1H/NRT3H/NTC | MRD&#8209;890, MRD&#8209;1110 | [ATBD](https://html.wps.met.no/jupyterbook/ATBD-HTML-Collection/SeaIceConcentrationEdge_ATBD_DO_NOT_EDIT/intro.html) |
 | SIT-P | Thin Sea Ice Thickness | Polar Regions and Adjacent Seas | NRT3H/NTC | MRD&#8209;910 | TBA |
 | SIED-P | Sea Ice Edge | Polar Regions and Adjacent Seas | NRT1H/NRT3H/NTC | MRD&#8209;915, MRD&#8209;1110 | TBA |
 | SID-P | Sea Ice Drift | Polar Regions and Adjacent Seas | NRT1H/NRT3H/NTC | MRD&#8209;920, MRD&#8209;1110 | TBA |
