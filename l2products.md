@@ -23,23 +23,24 @@ MRD&#8209;XXXX refers to the requirement number in the [CIMR Mission Requirement
 
 | L2 Variable ID | Description | Coverage Domain | Delivery Timeliness | MRD&#8209;XXXX | ATBD | 
 | ---            | ---         | ---             | ---                 | ---      | --- | 
-| SIC-P | Sea Ice Concentration | Polar Regions and Adjacent Seas | NRT1H/NRT3H/NTC | MRD&#8209;890, MRD&#8209;1110 | [ATBD](https://html.wps.met.no/jupyterbook/ATBD-HTML-Collection/SeaIceConcentrationEdge_ATBD_DO_NOT_EDIT/intro.html) |
-| SIT-P | Thin Sea Ice Thickness | Polar Regions and Adjacent Seas | NRT3H/NTC | MRD&#8209;910 | TBA |
-| SIED-P | Sea Ice Edge | Polar Regions and Adjacent Seas | NRT1H/NRT3H/NTC | MRD&#8209;915, MRD&#8209;1110 | TBA |
-| SID-P | Sea Ice Drift | Polar Regions and Adjacent Seas | NRT1H/NRT3H/NTC | MRD&#8209;920, MRD&#8209;1110 | TBA |
-| ITY-P | Ice stage of development / type | Polar Regions and Adjacent Seas | NRT3H/NTC | MRD&#8209;930 | TBA |
-| SND-P | Snow Depth on Sea Ice | Polar Regions and Adjacent Seas | NRT3H/NTC | MRD&#8209;940 | TBA |
-| SIST-P | Sea Ice Surface Temperature | Polar Regions and Adjacent Seas | NRT3H/NTC | MRD&#8209;970 | TBA |
-| SST-P | Sea Surface Temperature | Polar Regions and Adjacent Seas | NRT3H/NTC | MRD&#8209;905 | TBA |
-| SSS-P | Sea Surface Salinity | Polar Regions and Adjacent Seas | NRT3H/NTC | MRD&#8209;985 | TBA |
-| OWV-P | Ocean Surface Wind Vector | Polar Regions and Adjacent Seas | NRT3H/NTC (+ Speed as NRT1H) | MRD&#8209;995, MRD&#8209;1110 | TBA |
-| TSA-L | Terrestrial Snow Area | Global land | NRT3H/NTC | MRD&#8209;950 | TBA |
-| SWE-L | Terrestrial Snow Water Equivalent | Global land | NRT3H/NTC | MRD&#8209;960 | TBA |
-| LIC-L | Lake Ice Cover | Global land according to Hydrology mask | NRT3H/NTC | MRD&#8209;1010 | TBA |
-| FT-L | Soil Freeze/thaw state | Global land | NRT3H/NTC | MRD&#8209;1020 | TBA |
-| SM-L | Soil Moisture | Global land | NRT3H/NTC | MRD&#8209;1040 | TBA |
-| MMVI-L | Multi-frequency Microwave Vegetation Indicators | Global land | NRT3H/NTC | MRD&#8209;1050 | TBA |
-| SWF-L | Surface Water Fraction | Global land | NRT3H/NTC | MRD&#8209;1060 | TBA |
-| LSWT-L | Lake Surface Water Temperature | Global land according to Hydrology mask | NRT3H/NTC | MRD&#8209;1000 | TBA |
-| LST-L | Land Surface Temperature | Global land | NRT3H/NTC | MRD&#8209;1030 | TBA |
+| SIC-P | Sea Ice Concentration | Polar Regions and Adjacent Seas | NRT1H/NRT3H/NTC | MRD&#8209;890, MRD&#8209;1110 | [ATBD](https://l2atbds.cimr.eu/SeaIceConcentrationEdge_ATBD/intro.html) |
+| SIT-P | Thin Sea Ice Thickness | Polar Regions and Adjacent Seas | NRT3H/NTC | MRD&#8209;910 | [ATBD](https://l2atbds.cimr.eu/ThinSeaIceThickness_ATBD/intro.html) |
+| SIED-P | Sea Ice Edge | Polar Regions and Adjacent Seas | NRT1H/NRT3H/NTC | MRD&#8209;915, MRD&#8209;1110 | [ATBD](https://l2atbds.cimr.eu/SeaIceConcentrationEdge_ATBD/intro.html) |
+| SID-P | Sea Ice Drift | Polar Regions and Adjacent Seas | NRT1H/NRT3H/NTC | MRD&#8209;920, MRD&#8209;1110 | [ATBD](https://l2atbds.cimr.eu/SeaIceDrift_ATBD/intro.html) |
+| ITY-P | Ice stage of development / type | Polar Regions and Adjacent Seas | NRT3H/NTC | MRD&#8209;930 | [ATBD](https://l2atbds.cimr.eu/SeaIceTypeAndSnowDepth_ATBD/intro.html) |
+| SND-P | Snow Depth on Sea Ice | Polar Regions and Adjacent Seas | NRT3H/NTC | MRD&#8209;940 | [ATBD](https://l2atbds.cimr.eu/SeaIceTypeAndSnowDepth_ATBD/intro.html) |
+| SIST-P | Sea Ice Surface Temperature | Polar Regions and Adjacent Seas | NRT3H/NTC | MRD&#8209;970 | [ATBD](https://l2atbds.cimr.eu/SeaIceSurfaceTemperature_ATBD/intro.html) |
+| SST-P | Sea Surface Temperature | Polar Regions and Adjacent Seas | NRT3H/NTC | MRD&#8209;905 | [ATBD](https://l2atbds.cimr.eu/SeaSurfaceTemperature_ATBD/intro.html) |
+| SSS-P | Sea Surface Salinity | Polar Regions and Adjacent Seas | NRT3H/NTC | MRD&#8209;985 | [ATBD](https://l2atbds.cimr.eu/SeaSurfaceSalinityAndOceanWindVectors_ATBD/intro.html) |
+| OWV-P | Ocean Surface Wind Vector | Polar Regions and Adjacent Seas | NRT3H/NTC (+ Speed as NRT1H) | MRD&#8209;995, MRD&#8209;1110 | [ATBD](https://l2atbds.cimr.eu/SeaSurfaceSalinityAndOceanWindVectors_ATBD/intro.html) |
+| ---            | ---         | ---             | ---                 | ---      | --- | 
+| SCE-L | Snow Cover Extent | Global land | NRT3H/NTC | MRD&#8209;950 | [ATBD](https://l2atbds.cimr.eu/SnowCoverExtent_ATBD/intro.html) |
+| SWE-L | Terrestrial Snow Water Equivalent | Global land | NRT3H/NTC | MRD&#8209;960 | [ATBD](https://l2atbds.cimr.eu/SnowWaterEquivalent_ATBD/intro.html) |
+| FT-L | Soil Freeze/thaw state | Global land | NRT3H/NTC | MRD&#8209;1020 | [ATBD](https://l2atbds.cimr.eu/SoilFreezeThawState_ATBD/intro.html) |
+| SM-L | Soil Moisture | Global land | NRT3H/NTC | MRD&#8209;1040 | [ATBD](https://l2atbds.cimr.eu/SoilMoisture_Vegetation_ATBD/intro.html) |
+| MMVI-L | Multi-frequency Microwave Vegetation Indicators | Global land | NRT3H/NTC | MRD&#8209;1050 | [ATBD](https://l2atbds.cimr.eu/SoilMoisture_Vegetation_ATBD/intro.html) |
+| SWF-L | Surface Water Fraction | Global land | NRT3H/NTC | MRD&#8209;1060 | [ATBD](https://l2atbds.cimr.eu/SoilMoisture_Vegetation_ATBD/intro.html) |
+| LST-L | Land Surface Temperature | Global land | NRT3H/NTC | MRD&#8209;1030 | [ATBD](https://l2atbds.cimr.eu/LandSurfaceTemperature_ATBD/intro.html) |
+| LIC-L | Lake Ice Cover | Global land according to Hydrology mask | NRT3H/NTC | MRD&#8209;1010 | [ATBD](https://l2atbds.cimr.eu/SeaIceConcentrationEdge_ATBD/intro.html) |
+| LSWT-L | Lake Surface Water Temperature | Global land according to Hydrology mask | NRT3H/NTC | MRD&#8209;1000 | [ATBD](https://l2atbds.cimr.eu/SeaSurfaceTemperature_ATBD/intro.html) |
 
