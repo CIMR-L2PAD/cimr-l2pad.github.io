@@ -3,5 +3,33 @@
   url: https://www.met.no/en
   logo: /assets/img/logos/METNorway.jpg
   researchers:
-    - { name: "Thomas Lavergne", role: "Project Lead", link: "" }
+    - { name: "Thomas Lavergne", role: "Project Lead. Sea Ice", link: "https://orcid.org/0000-0002-9498-4551" }
+    - { name: "Emily Down", role: "Sea Ice", link: "" }
+    - { name: "Signe Aaboe", role: "Sea Ice", link: "https://orcid.org/0000-0002-5618-4537"}
+    - { name: "Per Helmer Skaali", role: "Admin and finance", link: ""}
+
+- name: Deimos/Indra Romania
+  role: Level-2 Software Design, Implementation, and Verification
+  url: https://deimos-space.com/who-we-are/
+  logo: /assets/img/logos/DEIMOS.jpg
+  reserchers:
+    - { name: "Suzana Vladescu", role: "Software", link: ""}
+    - { name: "Sebastian Severin", role: "Software", link: ""}
+    - { name: "Anca Radulescu", role: "Software", link: ""}
+    - { name: "Ionut Grozea", role: "Software", link: ""}
+
+- name: Danish Meteorological Institute
+  role: Algorithms for Sea, Sea Ice, and Lakes Surface Temperature
+  url: https://www.dmi.dk/
+  logo: /assets/img/logos/DMI.png
+  reserchers:
+    - { name: "Emy Alerskans", role: "Sea Surface Temperature", link: "https://orcid.org/0000-0001-8206-5999"}
+    - { name: "Hoyeon Shi", role: "Sea Ice Surface Temperature", link: "https://orcid.org/0000-0002-3306-5973"}
+    - { name: "Suman Singha", role: "Sea ICe", link: "https://orcid.org/0000-0002-1880-6868"}
+    - { name: "Jacob Høyer", role: "Sea Surface Temperature", link: "https://orcid.org/0000-0002-4141-0490"}
+
+
+
+
+
 
