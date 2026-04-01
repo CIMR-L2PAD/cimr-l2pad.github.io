@@ -3,9 +3,9 @@
   url: https://www.met.no/en
   logo: /assets/img/logos/METNorway.jpg
   team:
-    - { name: "Thomas Lavergne", role: "Project Lead. Sea Ice", link: "https://orcid.org/0000-0002-9498-4551" }
-    - { name: "Emily Down", role: "Sea Ice", link: "" }
-    - { name: "Signe Aaboe", role: "Sea Ice", link: "https://orcid.org/0000-0002-5618-4537"}
+    - { name: "Thomas Lavergne", role: "Project Lead. Sea Ice Variables", link: "https://orcid.org/0000-0002-9498-4551" }
+    - { name: "Emily Down", role: "Sea Ice Drift and Type,", link: "" }
+    - { name: "Signe Aaboe", role: "Sea Ice Type", link: "https://orcid.org/0000-0002-5618-4537"}
     - { name: "Per Helmer Skaali", role: "Admin and finance", link: ""}
 
 - name: Deimos/Indra Romania
@@ -45,6 +45,31 @@
   team:
     - { name: "Marcus Huntemann", role: "Sea Ice Thickness, Snow Depth", link: ""}
     - { name: "Gunnar Spreen", role: "Sea Ice Variables", link: "https://orcid.org/0000-0003-0165-8448"}
+
+- name: University of Valencia
+  role: Algorithms for Global Land Variables
+  url: https://www.uv.es/uvweb/college/en/university-valencia-1285845048380.html
+  logo: /assets/img/logos/UValencia.jpg
+  team:
+    - { name: "Moritz Link", role: "Soil Moisture and Vegetation", link: ""}
+    - { name: "Andrés Terrer", role: "Land Surface Temperature", link: ""}
+    - { name: "Roberto Fernández Morán", role: "Surface Water Fraction", link: "https://orcid.org/0000-0002-6030-8598"}
+    - { name: "Maria Piles", role: "Global Land Variables", link: "https://orcid.org/0000-0002-1169-3098"}
+
+- name: OceanDataLab
+  role: Algorithms for Ocean Winds and Salinity (in collaboration with IFREMER and OceanScope)
+  url: https://www.oceandatalab.com/home
+  logo: /assets/img/logos/ODL.jpg
+  team:
+    - { name: "Joseph Tenerelli", role: "Ocean Winds and Salinity", link: ""}
+
+- name: S&T Norway
+  role: Software, Software Integration
+  url: https://www.stcorp.nl/about-us
+  logo: /assets/img/logos/ST.png
+  team:
+    - { name: "Joseph Heywood", role: "Resampling and Regridding", link: ""}
+    - { name: "Nikhil Ulahannan", role: "Software Integration", link: ""}
 
 
 
