@@ -32,7 +32,8 @@ is available online.
 ## General introduction to the CIMR mission
 
 __The information below is prepared by the CIMR L2PAD team to introduce the CIMR mission to future Level-2 users.
-It summarizes and paraphrases information from the official sources listed above.__
+It summarizes and paraphrases information from the official sources listed above. Some of the illustrations used
+below are prepared from simulated files and might not fully reflect the final characteristics of CIMR in-flight.__
 
 The CIMR satellite system is developed as part of the Expansion activities in the EU's Copernicus program and is designed to monitor
 the rapid changes occurring in the Earth system. Monitoring these rapid changes in the Arctic environment and the polar regions in 
@@ -302,3 +303,26 @@ leads to the narrower swath for L-band than for the other frequencies.
   </figcaption>
 </figure>
 
+A defining feature of the CIMR instrument, and a consequence of the multiple radiometer feeds
+needed to record a gap-free image of the Earth surface is that the different
+feeds have different OZAs. This is different from past conically scanning radiometer missions that used only one feed per frequency.
+This difference of OZA between feeds can result in a striping pattern in the raw Tb imagery, that must be accounted for or
+compensated to a fixed reference OZA for downstream applications. The striping effect is expected to largest over the
+open ocean and over bare soil. Ice and vegetation reduce the sensitivity of Tb to OZA.
+
+Because of the multiple radiometer feeds (1 at L-band, 4 at C/X-band, 8 at K/Ka-band), the raw L1b imagery of CIMR is
+more challenging to use than from past and current similar missions. In addition to the per-feed OZA mentioned above,
+the on-ground location of each frequency channel is different. Combining several frequency channels in a downstream application,
+including in the Level-2 products, thus require resampling and regridding to a common set of positions and sizes.
+
+<figure style="margin:1.5rem 0;">
+  <img src="/assets/img/cimr_feed_OZA.png" 
+       alt="CIMR Observation Zenith Angle by feed" 
+       style="max-width:100%; height:auto; border-radius:4px;">
+  <figcaption style="margin-top:0.5rem; font-size:0.9rem; color:#555;">
+  OZA variations by feed and along the orbit from a simulated CIMR L1b file for L-band (left), C-band (middle), and K-band (right).
+  X- and Ka-band OZAs are similar to C- and K-band since they are recorded by the same feeds. The selected reference OZA values
+  are also plotted. The simulation was performed by the CIMR SCEPS project team and the plot is made by the CIMR L2PAD project.
+  The simulation corresponds to an ideal case (no ‘wobbling’ along the orbit).
+  </figcaption>
+</figure>
