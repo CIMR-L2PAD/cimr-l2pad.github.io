@@ -11,8 +11,8 @@ remote_theme: "jekyll/minima@593a05a"
 header_pages:
   - index.md
   - cimr.md
-  - team.md
   - l2products.md
+  - team.md
   - news.md       
 
 # --- Author / Org info ---
