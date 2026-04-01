@@ -15,6 +15,7 @@
 :root {
   --font-family: roboto,arial,serif;
   --font-color: #013140;
+  --link-color: #222222
   --caption-color: #333333;
   --background-color: #eeeeee;
   --hf-font-color: var(--background-color);
@@ -43,6 +44,19 @@ h2 {
 
 h3 {
    font-family: applegothic,roboto,arial,serif;
+}
+
+a {
+  color:var(--link-color);
+  text-decoration:none
+}
+a:visited {
+  color:var(--link-color);
+  text-decoration:underline
+}
+a:hover {
+  color:var(--link-color);
+  text-decoration:underline
 }
 
 .figure-caption {
@@ -151,6 +165,7 @@ table th {
   :root {
     --font-family: roboto,arial,serif;
     --font-color: #eeeeee;
+    --link-color: #888888;
     --caption-color: #666666;
     --background-color: #013140;
     --hf-font-color: var(--background-color);
