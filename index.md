@@ -4,16 +4,6 @@ title: "About"
 permalink: /
 ---
 
-<figure style="margin:1.5rem 0;">
-  <img src="/assets/img/under_construction.png" 
-       alt="This website is under construction" 
-       style="max-width:75%; height:auto; border-radius:4px;">
-  <figcaption class="fig-caption">
-    The CIMR L2PAD website is under construction, please come back soon.
-  </figcaption>
-</figure>
-
-
 The Level-2 Product Algorithm Development (L2PAD) project is a four-year (2023-2027) activity initiated by the
 European Space Agency (ESA) to prepare Level-2 algorithms and Ground Processing Prototype (GPP) for
 the Copernicus Imaging Microwave Radiometer (CIMR) mission.
@@ -35,6 +25,10 @@ Algorithm Theoretical Basis Documents (ATBDs) and the Level-2 Ground Prototype P
 
 This page serves as a public entry-point for the project and its results. It will be developed further as objectives are reached
 and results are available.
+
+Offical information about CIMR can be found on the ESA webpages, in particular:
+* The [official ESA page about the CIMR mission](https://www.esa.int/Applications/Observing_the_Earth/Copernicus/CIMR)
+* The [SentiWiki page about CIMR](https://sentiwiki.copernicus.eu/web/cimr)
 
 ESA made a video about CIMR Level-2 activities with contributions from our project team.
 
