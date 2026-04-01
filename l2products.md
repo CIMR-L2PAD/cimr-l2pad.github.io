@@ -21,7 +21,7 @@ Depending on the Level-2 product, different delivery timeliness are specified:
 * *Non-Time-Critical (NTC)*: Product delivered in less than 30 days to the point of user pickup after data acquisition by
    the satellite.
 
-MRD&#8209;XXXX refers to the requirement number in the [CIMR Mission Requirement Document v5](https://esamultimedia.esa.int/docs/EarthObservation/CIMR-MRD-v5.0-20230211_(Issued).pdf).
+MRD&#8209;XXXX refers to the requirement number in the [CIMR Mission Requirement Document v6](https://esamultimedia.esa.int/docs/EarthObservation/CIMR-MRD-v6.0-20260324-ISSUED.pdf).
 
 <b>NOTE:</b> The table below contains links to ATBDs (Algorithm Theoretical Basis Documents) developed in the CIMR L2PAD project.
 None of these ATBDs are in their final versions. These intermediate versions are shared openly and in good faith, for informing
