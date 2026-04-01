@@ -8,7 +8,7 @@ CIMR is the Copernicus Imaging Microwave Radiometer mission, a multi-frequency c
 designed by ESA to support EU's Arctic Policy, among others. Its launch is scheduled in 2029/30. CIMR refers equally to the mission,
 the satellite, and its main instrument.
 
-## Official resources about CIMR mission
+## Official resources about the CIMR mission
 
 <figure style="margin:1.5rem 0;">
   <img src="/assets/img/CIMR_inflight.jpg" 
@@ -32,7 +32,7 @@ is available online.
 ## General introduction to the CIMR mission
 
 __The information below is prepared by the CIMR L2PAD team to introduce the CIMR mission to future Level-2 users.
-It summarizes and paraphrases information from the official sources above.__
+It summarizes and paraphrases information from the official sources listed above.__
 
 The CIMR satellite system is developed as part of the Expansion activities in the EU's Copernicus program and is designed to monitor
 the rapid changes occurring in the Earth system. Monitoring these rapid changes in the Arctic environment and the polar regions in 
@@ -76,6 +76,14 @@ Ocean. This means that observations from the Northern Hemisphere and especially 
 than those from the Southern Hemisphere and Antarctic region. In this context, the latency is the duration between the the observation
 sensing time and the time a product (e.g. a Level-2 product using this observation) is available to a user.
 
+### Instrument and sensing characteristics
+
+The technical solution for the CIMR instrument is implemented by a multi-channel conically scanning microwave radiometer.
+The radiometer is optimized with low-noise channels and unique spatial resolutions centered in the L- (1.4 GHz), C- (6.9 GHz),
+X- (10.8 GHz), K- (18.7 GHz), and Ka-band (36.5 GHz).
+
+The table below summarizes the characteristics of the CIMR instrument that are most relevant for an end user to understand the
+CIMR mission. It is a summary of a similar table in the [MRD](https://esamultimedia.esa.int/docs/EarthObservation/CIMR-MRD-v6.0-20260324-ISSUED.pdf). 
 <table width="100%" cellpadding="4" cellspacing="0">
 	<col width="57*"/>
 	<col width="40*"/>
@@ -257,4 +265,40 @@ sensing time and the time a product (e.g. a Level-2 product using this observati
 	</tr>
 </table>
 
+All frequencies are recorded in 4 polarizations: vertical, horizontal, 3rd Stokes and 4th Stokes components. The instrument records
+along a full [0-360°] scan, providing both a fore and an aft view of each Earth location. This is unlike most past and current
+conically scanning radiometer missions for which only part of the scanning arc is available (the rest being hidden by the satellite
+itself or its solar panels). To achieve high spatial resolution, a large ~8-meter diameter mesh reflector is implemented.
+Multiple dual-frequency polarized radiometer feeds (1 at L-band, 4 at C/X-band, 8 at K/Ka-band) are necessary to minimize the rotation
+speed of the reflector, and onboard active calibration units maintain low random (NeΔT) and total standard uncertainty for all measurements.
+
+The conically scanning design enables a very wide swath width of nearly 2000 km (for C- to K-bands, narrower at L-band), providing
+sub-daily coverage of the Arctic and 95% coverage of the Earth every day using a single satellite. A driving requirement for the CIMR
+mission has been to achieve “no hole at the pole”: the pole points will be observed at the edge of each swath (at C- to Ka-band, not at L-band).
+
+<figure style="margin:1.5rem 0;">
+  <img src="/assets/img/CIMR_coverage_light.png" 
+       alt="Spatial coverage of one day of CIMR observations" 
+       style="max-width:100%; height:auto; border-radius:4px;">
+  <figcaption style="margin-top:0.5rem; font-size:0.9rem; color:#555;">
+  Illustration of the geographical coverage of the CIMR mission for the global, Arctic, and Antarctic regions. The image plots
+  the number of 24h revisits (orbits). Note that the pole point(s) are covered in all orbits. Note that the 29 days repeat
+  cycle of CIMR will ensure that the regions that are not observed on a given day are observed the day after.
+  </figcaption>
+</figure>
+
+The C- to Ka-band frequencies are recorded with an Observation Zenith Angle (OZA) close to 55.5° while the L-band is recorded
+with an OZA around 51.8°. The lower OZA at L-band is selected to improve the spatial resolution of the L-band imagery. It
+leads to the narrower swath for L-band than for the other frequencies.
+
+<figure style="margin:1.5rem 0;">
+  <img src="/assets/img/cimr_CandLband_swath.png" 
+       alt="Swath width of CIMR at C- and L-band" 
+       style="max-width:100%; height:auto; border-radius:4px;">
+  <figcaption style="margin-top:0.5rem; font-size:0.9rem; color:#555;">
+  Illustration of the scanning pattern of CIMR. The image shows a short portion of a simulated CIMR orbit, with the C-band
+  swath in orange and the narrower L-band swath in yellow. Note the full scan pattern consisting of the fore and aft scans.
+  Note that only a subset of the CIMR samples are plotted.
+  </figcaption>
+</figure>
 
