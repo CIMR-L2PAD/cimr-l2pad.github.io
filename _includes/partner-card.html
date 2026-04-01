@@ -17,9 +17,9 @@
       <div class="partner-role">{{ partner_role }}</div>
     {% endif %}
 
-    {% if partner.researchers and partner.researchers.size > 0 %}
+    {% if partner.team and partner.team.size > 0 %}
       <ul class="partner-people">
-        {% for p in partner.researchers %}
+        {% for p in partner.team %}
           <li>
             {% if p.link and p.link != "" %}
               <a href="{{ p.link }}" target="_blank" rel="noopener">{{ p.name }}</a>
