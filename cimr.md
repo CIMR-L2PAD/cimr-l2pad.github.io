@@ -156,8 +156,8 @@ CIMR mission. It is a summary of a similar table in the [MRD](https://esamultime
 		<td width="22%" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0.04in; padding-left: 0.04in; padding-right: 0in"><p style="orphans: 0; widows: 0">
 			Swath width [km]</p>
 		</td>
-		<td width="16%" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0.04in; padding-left: 0.04in; padding-right: 0in"><p align="center" style="orphans: 0; widows: 0; background: #ffff00">
-			?</p>
+		<td width="16%" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: none; padding-top: 0in; padding-bottom: 0.04in; padding-left: 0.04in; padding-right: 0in"><p align="center" style="orphans: 0; widows: 0">
+			&gt;1800</p>
 		</td>
 		<td colspan="4" width="62%" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding-top: 0in; padding-bottom: 0.04in; padding-left: 0.04in; padding-right: 0.04in"><p align="center" style="orphans: 0; widows: 0">
 			&gt;1900</p>
