@@ -31,7 +31,7 @@ The CIMR L2PAD project is implemented by a consortium of European and Canadian p
 lead of the Norwegian Meteorological Institute (METNO). CIMR L2PAD started in late 2023.
 
 All software, data, and algorithm documentations from CIMR L2PAD will be open, in particular the 
-Algorithm Theoretical Basis Documents (ATBDs) and the Level-2 prototype algorithms and GPP.
+Algorithm Theoretical Basis Documents (ATBDs) and the Level-2 Ground Prototype Processor (GPP).
 
 This page serves as a public entry-point for the project and its results. It will be developed further as objectives are reached
 and results are available.
