@@ -21,6 +21,14 @@ Depending on the Level-2 product, different delivery timeliness are specified:
 
 MRD&#8209;XXXX refers to the requirement number in the [CIMR Mission Requirement Document v5](https://esamultimedia.esa.int/docs/EarthObservation/CIMR-MRD-v5.0-20230211_(Issued).pdf).
 
+<b>NOTE:</b> The table below contains links to ATBDs (Algorithm Theoretical Basis Documents) developed in the CIMR L2PAD project.
+None of these ATBDs are in their final versions. These intermediate versions are shared openly and in good faith, for informing
+and triggering interaction with the future community of CIMR Level-2 products. If you want to cite or refer to these documents,
+please contact the authors (their names are in the footer of each ATBD). Please also contact the authors if you have specific
+comments or questions about the ATBDs or Level-2 parameter.
+If you have general comments or questions about CIMR or CIMR Level-2, please interact with the project team in our
+[discussion forum](https://github.com/orgs/CIMR-L2PAD/discussions).
+
 | L2 Variable ID | Description | Coverage Domain | Delivery Timeliness | MRD&#8209;XXXX | ATBD | 
 | ---            | ---         | ---             | ---                 | ---      | --- | 
 | SIC-P | Sea Ice Concentration | Polar Regions and Adjacent Seas | NRT1H/NRT3H/NTC | MRD&#8209;890, MRD&#8209;1110 | [ATBD](https://l2atbds.cimr.eu/SeaIceConcentrationEdge_ATBD/intro.html) |
