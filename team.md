@@ -17,8 +17,3 @@ is initially planned to last four years (2023-2027).
   </figcaption>
 </figure>
 
-<div class="partners-grid">
-{% for partner in site.data.partners %}
-  {% include partner-card.html partner=partner %}
-{% endfor %}
-</div>
