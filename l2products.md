@@ -4,6 +4,8 @@ title: Level-2 products
 permalink: /l2products/
 ---
 
+## Level-2 variables
+
 The CIMR L2PAD project focuses on Level-2 products under ESA's operational responsibility, that is
 Level-2 products in the *Polar Oceans* (incl. sea ice) and *Global Land* (incl. lakes) family. The
 *Global Oceans* and *Atmosphere* products are not covered, as they are under EUMETSAT's operational
@@ -52,3 +54,20 @@ If you have general comments or questions about CIMR or CIMR Level-2, please int
 | LIC-L | Lake Ice Cover | Global land according to Hydrology mask | NRT3H/NTC | MRD&#8209;1010 | [ATBD](https://l2atbds.cimr.eu/SeaIceConcentrationEdge_ATBD/intro.html) |
 | LSWT-L | Lake Surface Water Temperature | Global land according to Hydrology mask | NRT3H/NTC | MRD&#8209;1000 | [ATBD](https://l2atbds.cimr.eu/SeaSurfaceTemperature_ATBD/intro.html) |
 
+## Level-2 Product Format
+
+The CIMR L2PAD project developed initial Product Format Specification (PFS) for CIMR Level-2 products. We underline that
+this is not the final file format for the future operational CIMR Level-2 products, which will be aligned with formats
+from other Copernicus missions.
+
+This being said, many aspects of the L2PAD PFS will probably be adopted for the final operational PFS and future users are
+invited to read the <a href="https://drive.google.com/file/d/1c8lPVes3QXi8o5ZnDeXSCJ6qiQ5T5y2P/view?usp=drive_link">current PFS</a>.
+
+In particular, we highlight the use of hierarchical [EASE2](https://nsidc.org/data/user-resources/help-center/guide-ease-grids) grids
+with grid postings at 3, 9, 18, and 36 km.
+
+A series of test CIMR Level-2 product files, adhering to the current PFS and filled with dummy data, were also prepared to ease inspection.
+These test files are available for download <a href="https://thredds.met.no/thredds/catalog/cimr/L2PAD/L2TDP_PFS_TestFiles/V2_TC3/catalog.html">here</a>.
+
+If you have general comments or questions about the CIMR Level-2 PFS, please interact with the project team in our
+[discussion forum](https://github.com/orgs/CIMR-L2PAD/discussions).
