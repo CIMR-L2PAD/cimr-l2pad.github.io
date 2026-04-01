@@ -36,3 +36,7 @@ Algorithm Theoretical Basis Documents (ATBDs) and the Level-2 prototype algorith
 This page serves as a public entry-point for the project and its results. It will be developed further as objectives are reached
 and results are available.
 
+ESA made a video about CIMR Level-2 activities with contributions from our project team.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/PxA-Vjoruf4?si=zijAiWfj9T9Q3pVi" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
