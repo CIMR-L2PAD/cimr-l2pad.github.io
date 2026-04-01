@@ -13,20 +13,41 @@
   url: https://deimos-space.com/who-we-are/
   logo: /assets/img/logos/DEIMOS.png
   team:
-    - { name: "Suzana Vladescu", role: "Software", link: ""}
-    - { name: "Sebastian Severin", role: "Software", link: ""}
-    - { name: "Anca Radulescu", role: "Software", link: ""}
-    - { name: "Ionut Grozea", role: "Software", link: ""}
+    - { name: "Suzana Vladescu", role: "Software Design and Verification", link: ""}
+    - { name: "Sebastian Severin", role: "Software Design and Implementation", link: ""}
+    - { name: "Anca Radulescu", role: "Software Design", link: ""}
+    - { name: "Ionut Grozea", role: "Software Design", link: ""}
 
 - name: Danish Meteorological Institute
   role: Algorithms for Sea, Sea Ice, and Lakes Surface Temperature
-  url: https://www.dmi.dk/
+  url: https://www.dmi.dk/about-dmi
   logo: /assets/img/logos/DMI.png
   team:
     - { name: "Emy Alerskans", role: "Sea Surface Temperature", link: "https://orcid.org/0000-0001-8206-5999"}
     - { name: "Hoyeon Shi", role: "Sea Ice Surface Temperature", link: "https://orcid.org/0000-0002-3306-5973"}
-    - { name: "Suman Singha", role: "Sea ICe", link: "https://orcid.org/0000-0002-1880-6868"}
+    - { name: "Suman Singha", role: "Sea Ice", link: "https://orcid.org/0000-0002-1880-6868"}
     - { name: "Jacob Høyer", role: "Sea Surface Temperature", link: "https://orcid.org/0000-0002-4141-0490"}
+
+- name: Finnish Meteorological Institute
+  role: Algorithms for Land Cryospheric Variables
+  url: https://en.ilmatieteenlaitos.fi/
+  logo: /assets/img/logos/FMI.jpg
+  team:
+    - { name: "Lina Zschenderlein", role: "Snow", link: "https://orcid.org/0000-0001-7192-0072"}
+    - { name: "Kimmo Rautiainen", role: "Soil Freeze/Thaw", link: "https://orcid.org/0000-0003-0321-578X"}
+    - { name: "Juliette Ortet", role: "Snow", link: "https://orcid.org/0009-0002-8294-1076"}
+    - { name: "Kari Luojus", role: "Land Cryosphere", link: "https://orcid.org/0000-0002-4066-6005"}
+
+- name: University of Bremen
+  role: Algorithms for Sea Ice Variables
+  url: https://www.uni-bremen.de/en/
+  logo: /assets/img/logos/UBremen.png
+  team:
+    - { name: "Marcus Huntemann", role: "Sea Ice Thickness, Snow Depth", link: ""}
+    - { name: "Gunnar Spreen", role: "Sea Ice Variables", link: "https://orcid.org/0000-0003-0165-8448"}
+
+
+
 
 
 
