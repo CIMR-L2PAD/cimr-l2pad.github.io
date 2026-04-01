@@ -66,6 +66,15 @@ invited to read the <a href="https://drive.google.com/file/d/1c8lPVes3QXi8o5ZnDe
 In particular, we highlight the use of hierarchical [EASE2](https://nsidc.org/data/user-resources/help-center/guide-ease-grids) grids
 with grid postings at 3, 9, 18, and 36 km.
 
+<figure style="margin:1.5rem 0;">
+  <img src="/assets/img/ex_CIMR_L2_EASE2_MultiPanel.png" 
+       alt="Example CIMR L2 products on EASE2 grids" 
+       style="max-width:100%; height:auto; border-radius:4px;">
+  <figcaption style="margin-top:0.5rem; font-size:0.9rem; color:#555;">
+  Example CIMR Level-2 products on EASE2 grids: EASE2 Global (top), EASE2 Northern Polar (bottom left) and EASE2 Southern Polar (bottom right).
+  </figcaption>
+</figure>
+
 A series of test CIMR Level-2 product files, adhering to the current PFS and filled with dummy data, were also prepared to ease inspection.
 These test files are available for download <a href="https://thredds.met.no/thredds/catalog/cimr/L2PAD/L2TDP_PFS_TestFiles/V2_TC3/catalog.html">here</a>.
 
