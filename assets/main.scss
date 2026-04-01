@@ -16,6 +16,7 @@
   --font-family: roboto,arial,serif;
   --font-color: #013140;
   --link-color: #67409d;
+  --alt-link-color: #ab8cec;
   --caption-color: #333333;
   --background-color: #eeeeee;
   --hf-font-color: var(--background-color);
@@ -73,13 +74,17 @@ table {
   color:var(--font-color);
   background-color:var(--background-color);
 }
+table th {
+  color:var(--font-color);
+  background-color:var(--background-color);
+}
 table tr:nth-child(even) {
   color:var(--background-color);
   background-color:var(--font-color);
 }
-table th {
-  color:var(--font-color);
-  background-color:var(--background-color);
+table tr:nth-child(even) a {
+  color:var(--alt-link-color);
+  text-decoration:none
 }
 
 /* HEADER LAYOUT: logo + menu aligned left */
