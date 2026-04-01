@@ -11,7 +11,7 @@
 - name: Deimos/Indra Romania
   role: Level-2 Software Design, Implementation, and Verification
   url: https://deimos-space.com/who-we-are/
-  logo: /assets/img/logos/DEIMOS.jpg
+  logo: /assets/img/logos/DEIMOS.png
   reserchers:
     - { name: "Suzana Vladescu", role: "Software", link: ""}
     - { name: "Sebastian Severin", role: "Software", link: ""}
