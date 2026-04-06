@@ -49,7 +49,7 @@ If you have general comments or questions about CIMR or CIMR Level-2, please int
 | FT-L | Soil Freeze/thaw state | Global land | NRT3H/NTC | MRD&#8209;1020 | [ATBD](https://l2atbds.cimr.eu/SoilFreezeThawState_ATBD/intro.html) |
 | SM-L | Soil Moisture | Global land | NRT3H/NTC | MRD&#8209;1040 | [ATBD](https://l2atbds.cimr.eu/SoilMoisture_Vegetation_ATBD/intro.html) |
 | MMVI-L | Multi-frequency Microwave Vegetation Indicators | Global land | NRT3H/NTC | MRD&#8209;1050 | [ATBD](https://l2atbds.cimr.eu/SoilMoisture_Vegetation_ATBD/intro.html) |
-| SWF-L | Surface Water Fraction | Global land | NRT3H/NTC | MRD&#8209;1060 | [ATBD](https://l2atbds.cimr.eu/SoilMoisture_Vegetation_ATBD/intro.html) |
+| SWF-L | Surface Water Fraction | Global land | NRT3H/NTC | MRD&#8209;1060 | [ATBD](https://l2atbds.cimr.eu/SurfaceWaterFraction_ATBD/intro.html) |
 | LST-L | Land Surface Temperature | Global land | NRT3H/NTC | MRD&#8209;1030 | [ATBD](https://l2atbds.cimr.eu/LandSurfaceTemperature_ATBD/intro.html) |
 | LIC-L | Lake Ice Cover | Global land according to Hydrology mask | NRT3H/NTC | MRD&#8209;1010 | [ATBD](https://l2atbds.cimr.eu/SeaIceConcentrationEdge_ATBD/intro.html) |
 | LSWT-L | Lake Surface Water Temperature | Global land according to Hydrology mask | NRT3H/NTC | MRD&#8209;1000 | [ATBD](https://l2atbds.cimr.eu/SeaSurfaceTemperature_ATBD/intro.html) |
