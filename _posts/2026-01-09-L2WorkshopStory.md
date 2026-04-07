@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "New webpage for CIMR L2PAD"
+title: "CIMR L2 Workshop report and video"
 categories: [news]
 tags: [workshop, meeting]
 ---
