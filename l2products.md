@@ -71,7 +71,8 @@ with grid postings at 3, 9, 18, and 36 km.
        alt="Example CIMR L2 products on EASE2 grids" 
        style="max-width:100%; height:auto; border-radius:4px;">
   <figcaption style="margin-top:0.5rem; font-size:0.9rem; color:#555;">
-  Example CIMR Level-2 products on EASE2 grids: EASE2 Global (top), EASE2 Northern Polar (bottom left) and EASE2 Southern Polar (bottom right).
+  Example future CIMR Level-2 products on EASE2 grids: EASE2 Global (top), EASE2 Northern Polar (bottom left) and EASE2 Southern Polar (bottom right). **Note:** this visualization is only to illustrate the possible feel and coverage of the future CIMR L2 products.
+     The values plotted are not from a L2 retrieval but from model fields (ERA5, ERA5-Land, Copernicus Global Ocean Analysis, etc.) 
   </figcaption>
 </figure>
 
